@@ -41,17 +41,17 @@ teams <- unique(teams$Org)
 teams <- c("Top 100", teams)
 
 shinyUI(
-  
+
   fluidPage(
     titlePanel("MLB PROSPECT COMPS"),
     
     mainPanel((""),
-              #selectInput("teamSort", "Sort by Team", choices = teams, selected = "Top 100"),
               actionButton("compare", "Compare"),
-              br(),
-              verbatimTextOutput("test"),
               DTOutput("display_prospects"),
-              bsModal("modal", "Big League Comps", "compare", size = "large", dataTableOutput("tbl")
+              bsModal("modal", "Big League Comps", "compare", size = "large", 
+                      dataTableOutput("tbl"),
+                      br(),
+                      uiOutput("card")
               )
         )))
             

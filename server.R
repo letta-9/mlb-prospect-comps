@@ -4,31 +4,53 @@ library(plyr)
 library(shinyBS)
 library(tidyr)
 
-#Import csv files
+# IMPORT CSV FILES #
 
 prospects <- read_csv("prospect_master_090522.csv")
 mlb_bios <- read_csv("mlb_bios.csv")
-batters <- read_csv("batting_grades.csv")
+batters <- read_csv("mlb_batting.csv")
 
-#Clean prospects file
+# CLEAN PROSPECTS DATA #
 
 prospects$Age <- floor(prospects$Age)
 prospects$W <- plyr::round_any(prospects$W, 5, f=ceiling)
 prospects$H <- gsub(" ","", prospects$H)
 prospects$Class <- ifelse(prospects$Pos == 'SP' | prospects$Pos == 'MIRP'| prospects$Pos == 'SIRP', 'Pit', 'Pos')
+
+prospects <- prospects %>% separate(Hit, c("cHit","Hit"), "/")
+prospects$Hit <- gsub(" ","", prospects$Hit)
 prospects <- prospects %>% separate(Game, c("cGame","Game"), "/")
 prospects$Game <- gsub(" ","", prospects$Game)
+prospects <- prospects %>% separate(Raw, c("cRaw","Raw"), "/")
+prospects$Raw <- gsub(" ","", prospects$Raw)
+prospects <- prospects %>% separate(Spd, c("cSpd","Spd"), "/")
+prospects$Spd <- gsub(" ","", prospects$Spd)
 
-#Clean MLB bios file
+
+# CLEAN MLB BIOS DATA #
 
 mlb_bios$W <- plyr::round_any(mlb_bios$W, 5, f=ceiling)
 mlb_bios$Class <- ifelse(mlb_bios$Pos == 'SP' | mlb_bios$Pos == 'RP', 'Pit', 'Pos')
 
-#Create df for front page display
+
+# CREATE DATA TABLE FOR FRONT PAGE DISPLAY #
 
 display_prospects <- prospects %>% select(Top100, Name, Pos, Org, Age, H, W, B, T)
 
-#Create df for body type comp
+
+# CLEAN MLB BATTING # MIN 200 PA for 3/4 LAST SEASONS
+
+names(batters) <- c('Last','First','ID','Year','HR','AVG','G','EV','SPD')
+batters$Name <- paste(batters$First, batters$Last)
+
+batters <- batters %>% group_by(Name) %>% filter(n()>2)
+batters$HR <- ((batters$HR / batters$G) * 162)
+batters <- batters %>% select(Name, AVG, HR, EV, SPD)
+batters <- aggregate(batters, list(Name = batters$Name), mean)
+batters <- batters[,-2]
+
+
+# BODY TYPE #
 
 pros_body_comp <- prospects %>% select(Name, Class, H, W)
 mlb_body_comp <- mlb_bios %>% select(Name, Class, H, W)
@@ -38,25 +60,40 @@ body_comp[is.na(body_comp)] <- 'No Simliar Player'
 
 
 
-batters <- batters %>% group_by(Name) %>% filter(n()==3)
-batters$HR162 <- round(((batters$HR / batters$G) * 162), 0)
-game <- aggregate(batters$HR162, list(Name = batters$Name), mean)
-names(game)[2] <- 'HR'
-game$HR <- round(game$HR, 0)
-game_std <- round(sd(game$HR), 0)
-game_mean <- round(mean(game$HR), 0)
+for (i in 2:5){
+  n <- c('Hit', 'Game', 'Raw', 'Speed')
+  
+  
+  tool_std <- sd(batters[,i])
+  tool_mean <- mean(batters[,i])
+  
+  tool_breaks = c((tool_mean - (2*tool_std)),(tool_mean - tool_std), tool_mean, (tool_mean + tool_std),(tool_mean + (2*tool_std)))
+  
+  g <- findInterval(batters[,i], tool_breaks)
+  g <- factor(g)
+  levels(g) <- c("30","40","50","60","70","80")
+  
+  batters <- cbind(batters, g)
+  
+}
 
-breaks = c((game_mean - (2*game_std)),(game_mean - game_std), game_mean, (game_mean + game_std),(game_mean + (2*game_std)))
+names(batters) <- c("Name", "AVG","HR","EV","SPD","Hit","Game","Raw","Spd")
 
-game$Game <- findInterval(game$HR, breaks)
-game$Game <- factor(game$Game)
-levels(game$Game) <- c("30","40","50","60","70","80")
+pros_hit_comp <- prospects %>% select(Name, Hit)
+mlb_hit_comp <- batters %>% select(Name, Hit)
+hit_comp <- merge(pros_hit_comp, mlb_hit_comp, by = 'Hit', all=TRUE)
 
 pros_game_comp <- prospects %>% select(Name, Game)
-mlb_game_comp <- game %>% select(Name, Game)
+mlb_game_comp <- batters %>% select(Name, Game)
 game_comp <- merge(pros_game_comp, mlb_game_comp, by = 'Game', all=TRUE)
-
-
+ 
+pros_raw_comp <- prospects %>% select(Name, Raw)
+mlb_raw_comp <- batters %>% select(Name, Raw)
+raw_comp <- merge(pros_raw_comp, mlb_raw_comp, by = 'Raw', all=TRUE)
+ 
+pros_spd_comp <- prospects %>% select(Name, Spd)
+mlb_spd_comp <- batters %>% select(Name, Spd)
+spd_comp <- merge(pros_spd_comp, mlb_spd_comp, by = 'Spd', all=TRUE)
 
 
 
@@ -86,28 +123,59 @@ shinyServer(function(input, output){
     body_comp %>% filter(Name.x == selected_player())
   })
   
+  selected_hit = reactive({
+    hit_comp %>% filter(Name.x == selected_player())
+  })
+  
   selected_game = reactive({
     game_comp %>% filter(Name.x == selected_player())
   })
   
+  selected_raw = reactive({
+    raw_comp %>% filter(Name.x == selected_player())
+  })
+  
+  selected_spd = reactive({
+    spd_comp %>% filter(Name.x == selected_player())
+  })
+  
+
   modal_display = reactive({
     body = selected_body()[1,]
     body$Cat <- "Body Type"    
     body = body %>% select(Cat,Name.x,Name.y)
+    
+    hit = selected_hit()[1,]
+    hit$Cat <- "Hit"    
+    hit = hit %>% select(Cat,Name.x,Name.y)
 
     game = selected_game()[1,]
     game$Cat <- "Game Power"    
     game = game %>% select(Cat,Name.x,Name.y)
     
-    display <- rbind(body, game)
+    raw = selected_raw()[1,]
+    raw$Cat <- "Raw Power"    
+    raw = raw %>% select(Cat,Name.x,Name.y)    
     
-
+    spd = selected_spd()[1,]
+    spd$Cat <- "Speed"    
+    spd = spd %>% select(Cat,Name.x,Name.y)     
+    
+    display <- rbind(body, hit, game, raw, spd)
+    
   })
   
+
   
-  output$tbl <- renderDT(
+  output$tbl <- renderDataTable(
     modal_display()
   )
+
+  output$card <- renderUI({
+    name_url <-  gsub(" ","+", selected_player())
+    url <- sprintf("https://www.ebay.com/sch/i.html?_from=R40&_trksid=p2380057.m570.l1313&_nkw=%s+1st+bowman+chrome+auto+psa+10&_sacat=0", name_url)
+    tagList(a("1st Bowman Rookie Card", href=url))
+  })
 
   })
   
