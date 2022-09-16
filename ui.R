@@ -26,6 +26,7 @@ mlb_bios$Class <- ifelse(mlb_bios$Pos == 'SP' | mlb_bios$Pos == 'RP', 'Pit', 'Po
 
 display_prospects <- prospects %>% select(Top100, Name, Pos, Org, Age, H, W, B, T)
 
+
 #Create df for body type comp
 
 pros_body_comp <- prospects %>% select(Name, Class, H, W)
@@ -48,7 +49,9 @@ shinyUI(
     mainPanel((""),
               actionButton("compare", "Compare"),
               DTOutput("display_prospects"),
-              bsModal("modal", "Big League Comps", "compare", size = "large", 
+              bsModal("modal", "Big League Comps", "compare", size = "large",
+                      imageOutput("headshot"),
+                      br(),
                       dataTableOutput("tbl"),
                       br(),
                       uiOutput("card")
