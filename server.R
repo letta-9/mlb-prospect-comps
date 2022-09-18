@@ -14,8 +14,8 @@ library(data.table)
 
 
 prospects <- read_csv("prospect_master_090522.csv") #From fangraphs the board / mlb.com
-mlb_bios <- read_csv("mlb_bios_test.csv") #From data.R
-batters <- read_csv("mlb_batters_test.csv") #From data.R
+mlb_bios <- read_csv("mlb_bios.csv") #From data.R
+batters <- read_csv("mlb_batters.csv") #From data.R
 
 
 ########################
@@ -64,9 +64,9 @@ pros_spd_comp <- prospects %>% select(Name, Spd)
 mlb_spd_comp <- batters %>% select(Name, Spd)
 spd_comp <- merge(pros_spd_comp, mlb_spd_comp, by = 'Spd', all=TRUE)
 
-# pros_fld_comp <- prospects %>% select(Name, Pos, Fld)
-# mlb_fld_comp <- batters %>% select(Name, Pos, Fld)
-# fld_comp <- merge(pros_fld_comp, mlb_fld_comp, by = c('Pos','Fld'), all=TRUE)
+pros_fld_comp <- prospects %>% select(Name, Pos, Fld)
+mlb_fld_comp <- batters %>% select(Name, Pos, Fld)
+fld_comp <- merge(pros_fld_comp, mlb_fld_comp, by = c('Pos','Fld'), all=TRUE)
 
 
 
@@ -138,11 +138,11 @@ shinyServer(function(input, output){
     spd$Cat <- "Speed"    
     spd = spd %>% select(Cat,Name.x,Name.y)
     
-    # fld = selected_fld()[1,]
-    # fld$Cat <- "Fielding"    
-    # fld = fld %>% select(Cat,Name.x,Name.y)
+    fld = selected_fld()[1,]
+    fld$Cat <- "Fielding"
+    fld = fld %>% select(Cat,Name.x,Name.y)
     
-    display <- rbind(body, hit, game, raw, spd)
+    display <- rbind(body, hit, game, raw, spd, fld)
     
   })
 
