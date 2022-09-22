@@ -16,6 +16,8 @@ library(data.table)
 prospects <- read_csv("prospect_master_090522.csv") #From fangraphs the board / mlb.com
 mlb_bios <- read_csv("mlb_bios.csv") #From data.R
 batters <- read_csv("mlb_batters.csv") #From data.R
+pros_cat <- read.csv('prospect_catchers.csv')
+
 
 
 ########################
@@ -24,12 +26,28 @@ batters <- read_csv("mlb_batters.csv") #From data.R
 
 
 prospects$Age <- floor(prospects$Age)
+
 prospects$W <- plyr::round_any(prospects$W, 5, f=ceiling)
 prospects$Class <- ifelse(prospects$Pos == 'SP' | prospects$Pos == 'MIRP'| prospects$Pos == 'SIRP', 'Pitcher', 'Position')
 
 tool_list <- c('Hit','Game','Raw','Spd','Fld','FB','SL','CB','CH','CMD')
-for (a in tool_list){prospects <- prospects %>% separate(a, c(paste('c',a),a), " / ")}
+for (a in tool_list){
+  prospects <- prospects %>% separate(a, c(paste('c',a),a), " / ")
+}
 
+
+prospects$Hit <-as.numeric(prospects$Hit)
+prospects$Hit <- plyr::round_any(prospects$Hit, 10, f = ceiling)
+prospects$Game <-as.numeric(prospects$Game)
+prospects$Game <- plyr::round_any(prospects$Game, 10, f = ceiling)
+prospects$Raw <-as.numeric(prospects$Raw)
+prospects$Raw <- plyr::round_any(prospects$Raw, 10, f = ceiling)
+prospects$Spd <-as.numeric(prospects$Spd)
+prospects$Spd <- plyr::round_any(prospects$Spd, 10, f = ceiling)
+prospects$Fld <-as.numeric(prospects$Fld)
+prospects$Fld <- plyr::round_any(prospects$Fld, 10, f = ceiling)
+
+pros_cat <- pros_cat %>% filter(Pos == 'C') %>% select(Name, Pos, Arm)
 
 ############################################
 # CREATE DATA TABLE FOR FRONT PAGE DISPLAY #
