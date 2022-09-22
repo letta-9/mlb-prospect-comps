@@ -184,7 +184,8 @@ mlb_batters <- mlb_batters %>% relocate(Pos.x, .before = Hit)
 mlb_batters <- mlb_batters %>% relocate(Class, .before = Hit)
 mlb_batters <- mlb_batters %>% relocate(Arm, .before = B)
 colnames(mlb_batters)[2] <- 'Pos'
-
+mlb_batters$Pos[is.na(mlb_batters$Pos) & !is.na(mlb_batters$Arm)] <- 'C'
+mlb_batters$Class[!is.na(mlb_batters$Arm)] <- 'Catcher'
 
 
 write_csv(mlb_batters, 'C:/Users/mattb/Documents/PROJECTS/PROSPECT COMPS/Shiny/MLB Prospect Comps/mlb_batters.csv')
