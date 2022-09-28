@@ -18,10 +18,10 @@ library(baseballr)
 
 
 mlb_bios <- mlb_sports_players(sport_id = 1, season = 2022)
-mlb_bios$weight <- plyr::round_any(mlb_bios$weight, 5, f=ceiling)
+mlb_bios$weight <- plyr::round_any(mlb_bios$weight, 10, round)
 mlb_bios$primary_position_type <- ifelse(mlb_bios$primary_position_type != 'Pitcher', 'Position', mlb_bios$primary_position_type)
 mlb_bios <- mlb_bios %>% select(full_name, primary_position_abbreviation, primary_position_type, height, weight, bat_side_code, pitch_hand_code)
-names(mlb_bios) <- c('Name', 'Pos', 'Class','H','W','B','T')
+names(mlb_bios) <- c('Name', 'Pos', 'Bio.Class','H','W','B','T')
 
 write_csv(mlb_bios, 'mlb_bios_clean.csv')
 
@@ -67,18 +67,18 @@ for (b in years){
 }
 
 
+
 mlb_batters <- mlb_batters %>% group_by(player_full_name) %>% filter(n()>2)
 mlb_batters$avg <- as.numeric(mlb_batters$avg)
-mlb_batters$at_bats_per_home_run <- as.numeric(mlb_batters$at_bats_per_home_run)
+mlb_batters$home_runs <- as.numeric(mlb_batters$home_runs)
+mlb_batters$HR.162 <- (mlb_batters$home_runs / mlb_batters$games_played) *162
 
-games <- mlb_batters[c(41,5)]
-games <- aggregate(games$games_played, by=list(Name=games$player_full_name), FUN=sum)
 
 all_positions <- mlb_bios[,1:2]
 
 mlb_batters <- aggregate(mlb_batters, list(Name = mlb_batters$player_full_name), mean)
-mlb_batters <- mlb_batters %>% select(Name, avg, at_bats_per_home_run)
-mlb_batters <- subset(mlb_batters, !is.na(at_bats_per_home_run))
+mlb_batters <- mlb_batters %>% select(Name, avg, HR.162)
+mlb_batters <- subset(mlb_batters, !is.na(HR.162))
 
 colnames(mlb_ev)[20] <- 'Name'
 mlb_ev <- mlb_ev %>% select(Name, avg_hit_speed)
@@ -103,11 +103,8 @@ for (i in 2:5){
   g <- findInterval(mlb_batters[,i], tool_breaks)
   g <- factor(g)
   
-  if (i == 3){
-    levels(g) <- c("80","70","60","50","40","30")
-  } else {
-    levels(g) <- c("30","40","50","60","70","80")
-  }
+  levels(g) <- c(30,40,50,60,70,80)
+  
   
   mlb_batters <- cbind(mlb_batters, g)
   
@@ -146,7 +143,7 @@ for (j in positions) {
   
   Fld <- findInterval(x$OAA162, fld_breaks)
   Fld <- factor(Fld)
-  levels(Fld) <- c("30","40","50","60","70","80")
+  levels(Fld) <- c(30,40,50,60,70,80)
   
   x <- cbind(x, Fld)
   
@@ -190,7 +187,7 @@ mlb_batters <- mlb_batters %>% relocate(Arm, .before = B)
 colnames(mlb_batters)[2] <- 'Pos'
 mlb_batters$Pos[is.na(mlb_batters$Pos) & !is.na(mlb_batters$Arm)] <- 'C'
 mlb_batters$Class[!is.na(mlb_batters$Arm)] <- 'Catcher'
-mlb_batters[is.na(mlb_batters)] <- 0
+
 
 
 

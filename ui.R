@@ -8,7 +8,7 @@ library(shinydashboard)
 
 #Import CSV files
 
-prospects <- read_csv("prospect_master_090522.csv")
+prospects <- read_csv("prospects_clean.csv")
 
 #Clean prospects file
 

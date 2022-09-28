@@ -13,7 +13,7 @@ pros_cat <- read.csv('prospect_catchers_raw.csv') #From fangraphs THE BOARD
 
 prospects$Age <- floor(prospects$Age)
 
-prospects$W <- plyr::round_any(prospects$W, 5, f=ceiling)
+prospects$W <- plyr::round_any(prospects$W, 10, round)
 prospects$Class <- ifelse(prospects$Pos == 'SP' | prospects$Pos == 'MIRP'| prospects$Pos == 'SIRP', 'Pitcher', 'Position')
 
 tool_list <- c('Hit','Game','Raw','Spd','Fld','FB','SL','CB','CH','CMD')
@@ -44,8 +44,15 @@ prospects$CH <- plyr::round_any(prospects$CH, 10, f = ceiling)
 prospects <- merge(prospects, pros_cat, by='Name')
 prospects$Class[prospects$Pos.x == 'C'] <- 'Catcher'
 
-prospects <- prospects %>% select(c(1,3,39,8,9,11,15,17,19,21,45,24,26,28,30,32))
-colnames(prospects)[2] <- 'Pos'
+prospects <- prospects %>% select(c(1,2,3,39,4,5,6,7,8,9,11,15,17,19,21,45,24,26,28,30,32))
+colnames(prospects)[3] <- 'Pos'
+colnames(prospects)[6] <- 'Age'
+
+prospects <- cbind(prospects, prospects$Class)
+colnames(prospects)[22] <- 'Bio.Class'
+prospects$Bio.Class[prospects$Bio.Class == 'Catcher'] <- 'Position'
+
+
 
 write_csv(prospects, 'prospects_clean.csv')
 

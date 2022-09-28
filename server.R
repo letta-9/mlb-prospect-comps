@@ -23,6 +23,7 @@ pitchers <- read_csv('pitchers_clean.csv') #Raw CSV exported from baseball savan
 ############################################
 
 display_prospects <- prospects %>% select(Top100, Name, Pos, Org, Age, H, W, B, T)
+display_prospects <- display_prospects %>% arrange(Top100)
 
 #################
 # SHINY SERVER #
@@ -42,58 +43,74 @@ shinyServer(function(input, output){
     selection = "single",
   )
   
+
+  
   selected_player = reactive({
     x = isolate(display_prospects)
     x = x[input$display_prospects_rows_selected,]
-    x$Name
+    x = x$Name
+  })
+
+
+  selected_class = reactive({
+    y = prospects %>% filter(Name == selected_player())
+    y = y$Class
   })
   
   
   modal_display = reactive({
     modal <- data.frame(matrix(ncol=13, nrow=1))
-    colnames(modal) <- c('Name', 'Body', 'Hit', 'Game', 'Raw', 'Spd', 'Fld', 'Arm', 'FB', 'SL', 'CB', 'CH','CMD')
-
+    colnames(modal) <- c('Name', 'Body', 'Hit', 'Game_Power', 'Raw_Power', 'Spd', 'Fld', 'Arm', 'FB', 'SL', 'CB', 'CH','CMD')
+    
     selected_data <- prospects %>% filter(Name == selected_player())
+    print(selected_data)
 
-    modal$Name <- selected
-
-    if (selected_data$Class == 'Position'){
+    
+    if (selected_class() == 'Position'){
+      modal$Name <- selected_player()
+      modal$Body <- dplyr::select(sample_n(merge(selected_data, mlb_bios, by=c('Bio.Class','H','W')),1), Name.y)      
       modal$Hit <- dplyr::select(sample_n(merge(selected_data, batters, by=c('Hit','B')),1), Name.y)
-      modal$Game <- dplyr::select(sample_n(merge(selected_data, batters, by=c('Game','B')),1), Name.y)
-      modal$Raw <- dplyr::select(sample_n(merge(selected_data, batters, by=c('Raw','B')),1), Name.y)
+      modal$Game_Power <- dplyr::select(sample_n(merge(selected_data, batters, by=c('Game','B')),1), Name.y)
+      modal$Raw_Power <- dplyr::select(sample_n(merge(selected_data, batters, by=c('Raw','B')),1), Name.y)
       modal$Spd <- dplyr::select(sample_n(merge(selected_data, batters, by=('Spd')),1), Name.y)
       modal$Fld <- dplyr::select(sample_n(merge(selected_data, batters, by=c('Pos','Fld')),1), Name.y)
     } 
-
-    if (selected_data$Class == 'Catcher'){
+    
+    if (selected_class() == 'Catcher'){
+      modal$Name <- selected_player()
+      modal$Body <- dplyr::select(sample_n(merge(selected_data, mlb_bios, by=c('Bio.Class','H','W')),1), Name.y)
       modal$Hit <- dplyr::select(sample_n(merge(selected_data, batters, by=c('Hit','B')),1), Name.y)
-      modal$Game <- dplyr::select(sample_n(merge(selected_data, batters, by=c('Game','B')),1), Name.y)
-      modal$Raw <- dplyr::select(sample_n(merge(selected_data, batters, by=c('Raw','B')),1), Name.y)
+      modal$Game_Power <- dplyr::select(sample_n(merge(selected_data, batters, by=c('Game','B')),1), Name.y)
+      modal$Raw_Power <- dplyr::select(sample_n(merge(selected_data, batters, by=c('Raw','B')),1), Name.y)
       modal$Spd <- dplyr::select(sample_n(merge(selected_data, batters, by=('Spd')),1), Name.y)
       modal$Arm <- dplyr::select(sample_n(merge(selected_data, batters, by=c('Pos','Arm')),1), Name.y)
     } 
-
-    if (selected_data$Class == 'Pitcher'){
+    
+    if (selected_class() == 'Pitcher'){
+      modal$Name <- selected_player()
+      modal$Body <- dplyr::select(sample_n(merge(selected_data, mlb_bios, by=c('Bio.Class','H','W')),1), Name.y)
       modal$FB <- dplyr::select(sample_n(merge(selected_data, pitchers, by=c('T','FB')),1), Name.y)
       modal$SL <- dplyr::select(sample_n(merge(selected_data, pitchers, by=c('T','SL')),1), Name.y)
       modal$CB <- dplyr::select(sample_n(merge(selected_data, pitchers, by=c('T','CB')),1), Name.y)
       modal$CH <- dplyr::select(sample_n(merge(selected_data, pitchers, by=c('T','CH')),1), Name.y) 
     } 
-
+    
     modal <- t(modal)
     modal <- na.omit(modal)
-  })
+    
 
+  })
   
+
+
   output$tbl <- renderDataTable(
     modal_display()
   )
-
+  
   output$card <- renderUI({
     name_url <-  gsub(" ","+", selected_player())
     url <- sprintf("https://www.ebay.com/sch/i.html?_from=R40&_trksid=p2380057.m570.l1313&_nkw=%s+1st+bowman+chrome+auto+psa+10&_sacat=0", name_url)
     tagList(a("1st Bowman Rookie Card", href=url))
   })
-
-  })
   
+})
