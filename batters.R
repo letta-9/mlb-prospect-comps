@@ -28,7 +28,7 @@ for (i in 4:5){
   
   body_breaks = c((body_mean - (2*body_std)),(body_mean - body_std), body_mean, (body_mean + body_std),(body_mean + (2*body_std)))
   
-  t <- findInterval(mlb_body[,i], body_breaks)
+  t <- findInterval(mlb_bios[,i], body_breaks)
   t <- factor(t)
   
   levels(t) <- c(30,40,50,60,70,80)
