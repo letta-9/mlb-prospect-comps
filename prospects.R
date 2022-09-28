@@ -66,8 +66,9 @@ for (i in 7:8){
   prospects <- cbind(prospects, t)
 }
 
-#mlb_bios <- mlb_bios[c(1,2,3,6,7,8,9)]
-#names(mlb_bios) <- c('Name', 'Pos', 'Bio.Class','B','T','H','W')
+prospects <- prospects[c(1,2,3,4,5,6,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24)]
+colnames(prospects)[21] <- 'H'
+colnames(prospects)[22] <- 'W'
 
 
 write_csv(prospects, 'prospects_clean.csv')
