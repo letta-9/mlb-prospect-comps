@@ -21,7 +21,23 @@ mlb_bios <- mlb_sports_players(sport_id = 1, season = 2022)
 mlb_bios$weight <- plyr::round_any(mlb_bios$weight, 10, round)
 mlb_bios$primary_position_type <- ifelse(mlb_bios$primary_position_type != 'Pitcher', 'Position', mlb_bios$primary_position_type)
 mlb_bios <- mlb_bios %>% select(full_name, primary_position_abbreviation, primary_position_type, height, weight, bat_side_code, pitch_hand_code)
-names(mlb_bios) <- c('Name', 'Pos', 'Bio.Class','H','W','B','T')
+
+for (i in 4:5){
+  body_std <- sd(mlb_bios[,i])
+  body_mean <- mean(mlb_bios[,i])
+  
+  body_breaks = c((body_mean - (2*body_std)),(body_mean - body_std), body_mean, (body_mean + body_std),(body_mean + (2*body_std)))
+  
+  t <- findInterval(mlb_body[,i], body_breaks)
+  t <- factor(t)
+  
+  levels(t) <- c(30,40,50,60,70,80)
+  
+  mlb_bios <- cbind(mlb_bios, t)
+}
+
+mlb_bios <- mlb_bios[c(1,2,3,6,7,8,9)]
+names(mlb_bios) <- c('Name', 'Pos', 'Bio.Class','B','T','H','W')
 
 write_csv(mlb_bios, 'mlb_bios_clean.csv')
 
