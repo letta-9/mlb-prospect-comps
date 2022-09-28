@@ -52,6 +52,22 @@ prospects <- cbind(prospects, prospects$Class)
 colnames(prospects)[22] <- 'Bio.Class'
 prospects$Bio.Class[prospects$Bio.Class == 'Catcher'] <- 'Position'
 
+for (i in 7:8){
+  body_std <- sd(prospects[,i])
+  body_mean <- mean(prospects[,i])
+  
+  body_breaks = c((body_mean - (2*body_std)),(body_mean - body_std), body_mean, (body_mean + body_std),(body_mean + (2*body_std)))
+  
+  t <- findInterval(prospects[,i], body_breaks)
+  t <- factor(t)
+  
+  levels(t) <- c(30,40,50,60,70,80)
+  
+  prospects <- cbind(prospects, t)
+}
+
+#mlb_bios <- mlb_bios[c(1,2,3,6,7,8,9)]
+#names(mlb_bios) <- c('Name', 'Pos', 'Bio.Class','B','T','H','W')
 
 
 write_csv(prospects, 'prospects_clean.csv')
