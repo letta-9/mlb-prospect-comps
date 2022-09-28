@@ -13,7 +13,7 @@ pros_cat <- read.csv('prospect_catchers_raw.csv') #From fangraphs THE BOARD
 
 prospects$Age <- floor(prospects$Age)
 
-prospects$W <- plyr::round_any(prospects$W, 10, round)
+#prospects$W <- plyr::round_any(prospects$W, 10, round)
 prospects$Class <- ifelse(prospects$Pos == 'SP' | prospects$Pos == 'MIRP'| prospects$Pos == 'SIRP', 'Pitcher', 'Position')
 
 tool_list <- c('Hit','Game','Raw','Spd','Fld','FB','SL','CB','CH','CMD')
@@ -52,7 +52,16 @@ prospects <- cbind(prospects, prospects$Class)
 colnames(prospects)[22] <- 'Bio.Class'
 prospects$Bio.Class[prospects$Bio.Class == 'Catcher'] <- 'Position'
 
-for (i in 7:8){
+prospects <- prospects %>% separate(H, c('Ft','In'), "' ")
+prospects$In <- sub('"','',prospects$In)
+prospects$Ft <- as.numeric(prospects$Ft)
+prospects$In <- as.numeric(prospects$In)
+prospects$H <- (prospects$Ft * 12) + prospects$In
+prospects <- prospects %>% relocate(H, .before = W)
+
+
+
+for (i in 9:10){
   body_std <- sd(prospects[,i])
   body_mean <- mean(prospects[,i])
   
@@ -66,10 +75,9 @@ for (i in 7:8){
   prospects <- cbind(prospects, t)
 }
 
-prospects <- prospects[c(1,2,3,4,5,6,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24)]
-colnames(prospects)[21] <- 'H'
-colnames(prospects)[22] <- 'W'
-
+prospects <- prospects[c(1,2,3,4,5,6,25,26,11,12,13,14,15,16,17,18,19,20,21,22,23,24)]
+colnames(prospects)[7] <- 'H'
+colnames(prospects)[8] <- 'W'
 
 write_csv(prospects, 'prospects_clean.csv')
 

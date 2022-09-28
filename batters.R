@@ -18,21 +18,31 @@ library(baseballr)
 
 
 mlb_bios <- mlb_sports_players(sport_id = 1, season = 2022)
-mlb_bios$weight <- plyr::round_any(mlb_bios$weight, 10, round)
+#mlb_bios$weight <- plyr::round_any(mlb_bios$weight, 10, round)
 mlb_bios$primary_position_type <- ifelse(mlb_bios$primary_position_type != 'Pitcher', 'Position', mlb_bios$primary_position_type)
 mlb_bios <- mlb_bios %>% select(full_name, primary_position_abbreviation, primary_position_type, height, weight, bat_side_code, pitch_hand_code)
+names(mlb_bios) <- c('Name', 'Pos', 'Bio.Class','H','W','B','T')
+mlb_bios <- mlb_bios %>% separate(H, c('Ft','In'), "' ")
+mlb_bios$In <- sub('"','',mlb_bios$In)
+mlb_bios$Ft <- as.numeric(mlb_bios$Ft)
+mlb_bios$In <- as.numeric(mlb_bios$In)
+mlb_bios$H <- (mlb_bios$Ft * 12) + mlb_bios$In
+
+mlb_bios <- mlb_bios[c(1,2,3,9,6,7,8)]
+mlb_bios <- data.frame(mlb_bios)
+
 
 for (i in 4:5){
   body_std <- sd(mlb_bios[,i])
   body_mean <- mean(mlb_bios[,i])
-  
+
   body_breaks = c((body_mean - (2*body_std)),(body_mean - body_std), body_mean, (body_mean + body_std),(body_mean + (2*body_std)))
-  
+
   t <- findInterval(mlb_bios[,i], body_breaks)
   t <- factor(t)
-  
+
   levels(t) <- c(30,40,50,60,70,80)
-  
+
   mlb_bios <- cbind(mlb_bios, t)
 }
 
@@ -88,6 +98,9 @@ mlb_batters <- mlb_batters %>% group_by(player_full_name) %>% filter(n()>2)
 mlb_batters$avg <- as.numeric(mlb_batters$avg)
 mlb_batters$home_runs <- as.numeric(mlb_batters$home_runs)
 mlb_batters$HR.162 <- (mlb_batters$home_runs / mlb_batters$games_played) *162
+
+games <- mlb_batters[c(41,5)]
+games <- aggregate(games$games_played, by=list(Name=games$player_full_name), FUN=sum)
 
 
 all_positions <- mlb_bios[,1:2]
@@ -196,15 +209,16 @@ mlb_oaa <- mlb_oaa_blank[,c(7,12)]
 mlb_batters <- merge(mlb_batters, mlb_oaa, by="Name", all = TRUE)
 mlb_batters <- merge(mlb_batters, mlb_bios, by = 'Name')
 mlb_batters <- merge(mlb_batters, mlb_cat, by = 'Name', all = TRUE)
-mlb_batters <- mlb_batters[c(1,6,7,8,9,10,11,12,15,16,18)]
+mlb_batters <- mlb_batters[c(1,6,7,8,9,10,11,12,13,14,15,16,18)]
 mlb_batters <- mlb_batters %>% relocate(Pos.x, .before = Hit)
-mlb_batters <- mlb_batters %>% relocate(Class, .before = Hit)
+mlb_batters <- mlb_batters %>% relocate(Bio.Class, .before = Hit)
 mlb_batters <- mlb_batters %>% relocate(Arm, .before = B)
 colnames(mlb_batters)[2] <- 'Pos'
 mlb_batters$Pos[is.na(mlb_batters$Pos) & !is.na(mlb_batters$Arm)] <- 'C'
+mlb_batters$Bio.Class[!is.na(mlb_batters$Arm)] <- 'Position'
+mlb_batters <- cbind(mlb_batters, mlb_batters$Bio.Class)
+colnames(mlb_batters)[14] <- 'Class'
 mlb_batters$Class[!is.na(mlb_batters$Arm)] <- 'Catcher'
-
-
 
 
 write_csv(mlb_batters, 'batters_clean.csv')
