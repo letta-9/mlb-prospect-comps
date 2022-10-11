@@ -22,7 +22,7 @@ pitchers <- read_csv('pitchers_clean.csv') #Raw CSV exported from baseball savan
 # CREATE DATA TABLE FOR FRONT PAGE DISPLAY #
 ############################################
 
-display_prospects <- prospects %>% select(Top100, Name, Pos, Org, Age, H, W, B, T)
+display_prospects <- prospects %>% select(Top100, Name, Pos, Org, Age, Ht, Wt, B, T)
 display_prospects <- display_prospects %>% arrange(Top100)
 
 #################
@@ -71,7 +71,7 @@ shinyServer(function(input, output){
       modal$Body <- dplyr::select(sample_n(merge(selected_data, mlb_bios, by=c('Bio.Class','H','W')),1), Name.y)      
       modal$Hit <- dplyr::select(sample_n(merge(selected_data, batters, by=c('Hit','B')),1), Name.y)
       modal$Game_Power <- dplyr::select(sample_n(merge(selected_data, batters, by=c('Game','B')),1), Name.y)
-      modal$Raw_Power <- dplyr::select(sample_n(merge(selected_data, batters, by=c('Raw','B')),1), Name.y)
+      modal$Raw_Power <- dplyr::select(sample_n(merge(selected_data, batters, by=c('Raw')),1), Name.y)
       modal$Spd <- dplyr::select(sample_n(merge(selected_data, batters, by=('Spd')),1), Name.y)
       modal$Fld <- dplyr::select(sample_n(merge(selected_data, batters, by=c('Pos','Fld')),1), Name.y)
     } 
@@ -109,8 +109,17 @@ shinyServer(function(input, output){
   
   output$card <- renderUI({
     name_url <-  gsub(" ","+", selected_player())
-    url <- sprintf("https://www.ebay.com/sch/i.html?_from=R40&_trksid=p2380057.m570.l1313&_nkw=%s+1st+bowman+chrome+auto+psa+10&_sacat=0", name_url)
-    tagList(a("1st Bowman Rookie Card", href=url))
+    url <- sprintf("https://www.ebay.com/sch/i.html?_from=R40&_nkw=%s+1st+bowman+chrome+auto+psa+10&_sacat=0&LH_Auction=1&_sop=1", name_url)
+    tagList(a("ROOKIE CARD", href=url, target="_blank"))
   })
+  
+  output$highlight <- renderUI({
+    name_url <-  gsub(" ","+", selected_player())
+    url <- sprintf("https://www.youtube.com/results?search_query=%s+highlights+", name_url)
+    tagList(a("HIGHLIGHTS", href=url, target="_blank"))
+  })
+  
+
+  
   
 })

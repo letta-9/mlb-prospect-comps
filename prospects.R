@@ -4,8 +4,9 @@ library(plyr)
 library(tidyr)
 library(readr)
 
-prospects <- read_csv('prospects_raw.csv') #From fangraphs THE BOARD / mlb.com
-pros_cat <- read.csv('prospect_catchers_raw.csv') #From fangraphs THE BOARD
+#Last Updated 10/10/22
+prospects <- read_csv('prospects_raw.csv') #From fangraphs THE BOARD - Summary, Scoutin Position, Scouting Pitching. Remove space in Top 100 Column
+pros_cat <- read.csv('prospect_catchers_raw.csv') #From fangraphs THE BOARD - Physical Attributes
 
 #######################
 # CLEAN PROSPECT DATA #
@@ -52,6 +53,8 @@ prospects <- cbind(prospects, prospects$Class)
 colnames(prospects)[22] <- 'Bio.Class'
 prospects$Bio.Class[prospects$Bio.Class == 'Catcher'] <- 'Position'
 
+prospects <-cbind(prospects, prospects$H)
+prospects <-cbind(prospects, prospects$W)
 prospects <- prospects %>% separate(H, c('Ft','In'), "' ")
 prospects$In <- sub('"','',prospects$In)
 prospects$Ft <- as.numeric(prospects$Ft)
@@ -75,9 +78,10 @@ for (i in 9:10){
   prospects <- cbind(prospects, t)
 }
 
-prospects <- prospects[c(1,2,3,4,5,6,25,26,11,12,13,14,15,16,17,18,19,20,21,22,23,24)]
+prospects <- prospects[c(1,2,3,4,5,6,27,28,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26)]
 colnames(prospects)[7] <- 'H'
 colnames(prospects)[8] <- 'W'
-
-write_csv(prospects, 'prospects_clean.csv')
+colnames(prospects)[23] <- 'Ht'
+colnames(prospects)[24] <- 'Wt'
+write_csv(prospects, 'prospects_clean.csv') #Move to app folder
 

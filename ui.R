@@ -28,11 +28,13 @@ shinyUI(
               bsModal("modal", "Big League Comps", "compare", size = "large",
                       dataTableOutput("tbl"),
                       br(),
-                      uiOutput("card"))
-
+                      uiOutput("card"),
+                      br(),
+                      uiOutput("highlight"))
 
         )
-    )
+
+)
   
             
         
