@@ -16,8 +16,8 @@ library(baseballr)
 # CREATE MLB BIOS TABLE #
 #########################
 
+mlb_bios <- mlb_sports_players(sport_id = 1, season = 2022) #BASEBALL R
 
-mlb_bios <- mlb_sports_players(sport_id = 1, season = 2022)
 #mlb_bios$weight <- plyr::round_any(mlb_bios$weight, 10, round)
 mlb_bios$primary_position_type <- ifelse(mlb_bios$primary_position_type != 'Pitcher', 'Position', mlb_bios$primary_position_type)
 mlb_bios <- mlb_bios %>% select(full_name, primary_position_abbreviation, primary_position_type, height, weight, bat_side_code, pitch_hand_code)
@@ -32,6 +32,7 @@ mlb_bios <- mlb_bios[c(1,2,3,9,6,7,8)]
 mlb_bios <- data.frame(mlb_bios)
 
 
+#CONVERT TO 20-80 SCALE
 for (i in 4:5){
   body_std <- sd(mlb_bios[,i])
   body_mean <- mean(mlb_bios[,i])
@@ -56,25 +57,31 @@ write_csv(mlb_bios, 'mlb_bios_clean.csv')
 # CREATE MLB BATTERS TABLE #
 ############################
 
-
+#BASEBALL R FOR HR, AVG (2022)
 mlb_batters <- mlb_stats(stat_type = 'season', player_pool = 'all', stat_group = 'hitting', season = '2022')
 mlb_batters <- mlb_batters %>% filter(plate_appearances > 200)
 
+#BASEBALL R FOR EV (2022)
 mlb_ev <- statcast_leaderboards(leaderboard = "exit_velocity_barrels", year = 2022, min_pa = 100)
 mlb_ev$player_full_name <- paste(mlb_ev$first_name, mlb_ev$last_name)
 
+#BASEBALL R FOR OAA (2022)
 mlb_oaa <- statcast_leaderboards(leaderboard = "outs_above_average", year = 2022, min_field = 50)
 mlb_oaa$player_full_name <- paste(mlb_oaa$first_name, mlb_oaa$last_name)
 
+#BASEBALL R FOR SPD (2022)
 mlb_spd <- statcast_leaderboards(leaderboard = "sprint_speed", year = 2022)
 mlb_spd$player_full_name <- paste(mlb_spd$first_name, mlb_spd$last_name)
 
+#BASEBALL R FOR CATCHER ARM (2022)
 mlb_cat <- statcast_leaderboards(leaderboard = "pop_time", year = 2022, min_field = "q")
 mlb_cat <- mlb_cat %>% select(catcher,maxeff_arm_2b_3b_sba)
 mlb_cat$Pos <- 'C'
 colnames(mlb_cat)[1:2] <- c('Name','Arm')
 mlb_cat$Name <- iconv(mlb_cat$Name, from = "UTF-8", to = "ASCII//TRANSLIT")
 
+
+#BASEBALL R FOR STATS OF PAST 3 YEARS
 years <- c('2021','2020','2019')
 
 for (b in years){
@@ -220,6 +227,20 @@ mlb_batters <- cbind(mlb_batters, mlb_batters$Bio.Class)
 colnames(mlb_batters)[14] <- 'Class'
 mlb_batters$Class[!is.na(mlb_batters$Arm)] <- 'Catcher'
 
+#####################
+#Add Pos Class column
+#####################
+
+mlb_batters <- mlb_batters %>% 
+  mutate(
+    Pos.Class = case_when(
+      Pos == 'CF' | Pos == 'LF' | Pos == 'RF' ~ 'OF',
+      Pos == '2B' | Pos == 'SS' ~ 'MI',
+      Pos == '3B' | Pos == '1B' ~ 'CI',      
+      Pos == 'C' ~ 'C',
+      Pos == 'DH' ~ 'DH',
+    )
+  )
 
 write_csv(mlb_batters, 'batters_clean.csv')
 

@@ -115,42 +115,99 @@ pitchers <- read.csv('pitchers_clean.csv') #Fome baseball savant export csv
 ###################################
 
 
-modal <- data.frame(matrix(ncol=13, nrow=1))
-colnames(modal) <- c('Name', 'Body', 'Hit', 'Game', 'Raw', 'Spd', 'Fld', 'Arm', 'FB', 'SL', 'CB', 'CH','CMD')
+# modal <- data.frame(matrix(ncol=13, nrow=1))
+# colnames(modal) <- c('Name', 'Body', 'Hit', 'Game_Power', 'Raw_Power', 'Spd', 'Fld', 'Arm', 'FB', 'SL', 'CB', 'CH','CMD')
+# 
+# selected <- "Triston Casas"
+# 
+# 
+# selected_data <- prospects %>% filter(Name == selected)
+# 
+# modal$Name <- selected
+# 
+# if (selected_data$Class == 'Position'){
+#   modal$Name <- selected
+#   modal$Body <- dplyr::select(sample_n(merge(selected_data, mlb_bios, by=c('Bio.Class','H','W')),1), Name.y)      
+#   modal$Hit <- dplyr::select(sample_n(merge(selected_data, batters, by=c('Hit','B')),1), Name.y)
+#   modal$Game_Power <- dplyr::select(sample_n(merge(selected_data, batters, by=c('Game','B')),1), Name.y)
+#   modal$Raw_Power <- dplyr::select(sample_n(merge(selected_data, batters, by=c('Raw')),1), Name.y)
+#   modal$Spd <- dplyr::select(sample_n(merge(selected_data, batters, by=('Spd')),1), Name.y)
+#   modal$Fld <- dplyr::select(sample_n(merge(selected_data, batters, by=c('Pos','Fld')),1), Name.y)
+# } 
+# 
+# if (selected_data$Class == 'Catcher'){
+#   modal$Name <- selected
+#   modal$Body <- dplyr::select(sample_n(merge(selected_data, mlb_bios, by=c('Bio.Class','H','W')),1), Name.y)
+#   modal$Hit <- dplyr::select(sample_n(merge(selected_data, batters, by=c('Hit','B')),1), Name.y)
+#   modal$Game_Power <- dplyr::select(sample_n(merge(selected_data, batters, by=c('Game','B')),1), Name.y)
+#   modal$Raw_Power <- dplyr::select(sample_n(merge(selected_data, batters, by=c('Raw','B')),1), Name.y)
+#   modal$Spd <- dplyr::select(sample_n(merge(selected_data, batters, by=('Spd')),1), Name.y)
+#   modal$Arm <- dplyr::select(sample_n(merge(selected_data, batters, by=c('Pos','Arm')),1), Name.y)
+# } 
+#   
+# if (selected_data$Class == 'Pitcher'){
+#   modal$Name <- selected
+#   modal$Body <- dplyr::select(sample_n(merge(selected_data, mlb_bios, by=c('Bio.Class','H','W')),1), Name.y)
+#   modal$FB <- dplyr::select(sample_n(merge(selected_data, pitchers, by=c('T','FB')),1), Name.y)
+#   modal$SL <- dplyr::select(sample_n(merge(selected_data, pitchers, by=c('T','SL')),1), Name.y)
+#   modal$CB <- dplyr::select(sample_n(merge(selected_data, pitchers, by=c('T','CB')),1), Name.y)
+#   modal$CH <- dplyr::select(sample_n(merge(selected_data, pitchers, by=c('T','CH')),1), Name.y) 
+# } 
+#   
+# 
+# modal <- t(modal)
+# modal <- na.omit(modal)
 
-selected <- "Corbin Carrol"
 
 
+##########################
+#Overall player comp table
+##########################
+
+selected <- "Jordan Lawlar"
 selected_data <- prospects %>% filter(Name == selected)
 
-modal$Name <- selected
+bat_ovl <- batters %>% filter(batters$Pos == selected_data$Pos, 
+                              batters$B == selected_data$B,
+                              batters$T == selected_data$T)
+bat_ovl[is.na(bat_ovl)] <- 0
 
-if (selected_data$Class == 'Position'){
-  modal$Hit <- dplyr::select(sample_n(merge(selected_data, batters, by=c('Hit','B')),1), Name.y)
-  modal$Game <- dplyr::select(sample_n(merge(selected_data, batters, by=c('Game','B')),1), Name.y)
-  modal$Raw <- dplyr::select(sample_n(merge(selected_data, batters, by=c('Raw','B')),1), Name.y)
-  modal$Spd <- dplyr::select(sample_n(merge(selected_data, batters, by=('Spd')),1), Name.y)
-  modal$Fld <- dplyr::select(sample_n(merge(selected_data, batters, by=c('Pos','Fld')),1), Name.y)
-} 
+selected_data <- selected_data[c(1,11,12,13,14,15,16,7,8)]
+selected_vec <- as.numeric(selected_data[,-1])
 
-if (selected_data$Class == 'Catcher'){
-  modal$Hit <- dplyr::select(sample_n(merge(selected_data, batters, by=c('Hit','B')),1), Name.y)
-  modal$Game <- dplyr::select(sample_n(merge(selected_data, batters, by=c('Game','B')),1), Name.y)
-  modal$Raw <- dplyr::select(sample_n(merge(selected_data, batters, by=c('Raw','B')),1), Name.y)
-  modal$Spd <- dplyr::select(sample_n(merge(selected_data, batters, by=('Spd')),1), Name.y)
-  modal$Arm <- dplyr::select(sample_n(merge(selected_data, batters, by=c('Pos','Arm')),1), Name.y)
-} 
-  
-if (selected_data$Class == 'Pitcher'){
-  modal$FB <- dplyr::select(sample_n(merge(selected_data, pitchers, by=c('T','FB')),1), Name.y)
-  modal$SL <- dplyr::select(sample_n(merge(selected_data, pitchers, by=c('T','SL')),1), Name.y)
-  modal$CB <- dplyr::select(sample_n(merge(selected_data, pitchers, by=c('T','CB')),1), Name.y)
-  modal$CH <- dplyr::select(sample_n(merge(selected_data, pitchers, by=c('T','CH')),1), Name.y) 
-} 
-  
+bat_ovl <- bat_ovl[c(1,4,5,6,7,8,9,12,13)]
+bat_mat <- data.matrix(bat_ovl[,-1])
 
-modal <- t(modal)
-modal <- na.omit(modal)
+ovl <- abs(sweep(bat_mat, 2, selected_vec))
+ovl <- cbind(ovl, rowSums(ovl))
+ovl <- cbind(bat_ovl[,1], ovl)
+colnames(ovl)[10] <- 'CV'
+ovl <- ovl %>% arrange(CV)
+ovl <- ovl[1,]
+print(ovl)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

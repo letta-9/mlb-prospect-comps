@@ -83,5 +83,24 @@ colnames(prospects)[7] <- 'H'
 colnames(prospects)[8] <- 'W'
 colnames(prospects)[23] <- 'Ht'
 colnames(prospects)[24] <- 'Wt'
+
+#####################
+#Add Pos Class column
+#####################
+
+prospects <- prospects %>% 
+  mutate(
+    Pos.Class = case_when(
+      Pos == 'CF' | Pos == 'LF' | Pos == 'RF' ~ 'OF',
+      Pos == '2B' | Pos == 'SS' ~ 'MI',
+      Pos == '3B' | Pos == '1B' ~ 'CI',      
+      Pos == 'C' ~ 'C',
+      Pos == 'DH' ~ 'DH',
+      Pos == 'SP' ~ 'SP',
+      Pos == 'MIRP' | Pos == 'SIRP' ~ 'RP',
+    )
+  )
+
+
 write_csv(prospects, 'prospects_clean.csv') #Move to app folder
 
