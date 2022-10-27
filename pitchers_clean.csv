@@ -1,476 +1,475 @@
-Name,T,CUT,FB,SNK,SL,CB,CH,SPL,Class
- Corbin Burnes,R,60,0,50,70,50,50,0,Pitcher
- Carlos Rodon,L,0,60,0,60,60,0,0,Pitcher
- Gerrit Cole,R,50,60,0,60,60,40,0,Pitcher
- Logan Gilbert,R,0,60,0,50,50,60,0,Pitcher
- Spencer Strider,R,0,60,0,50,0,0,0,Pitcher
- Triston McKenzie,R,0,60,0,50,60,0,0,Pitcher
- Sean Manaea,L,0,0,50,40,0,50,0,Pitcher
- Nick Pivetta,R,0,60,0,50,60,0,0,Pitcher
- Cristian Javier,R,0,60,0,50,60,0,0,Pitcher
- Joe Ryan,R,0,60,0,40,50,60,0,Pitcher
- Framber Valdez,L,40,0,60,0,80,60,0,Pitcher
- Zac Gallen,R,60,60,0,0,60,60,0,Pitcher
- Jose Urquidy,R,50,60,0,50,60,50,0,Pitcher
- Kevin Gausman,R,0,70,0,50,0,0,60,Pitcher
- Dylan Cease,R,0,60,0,50,60,0,0,Pitcher
- Michael Kopech,R,0,60,0,60,50,0,0,Pitcher
- Justin Verlander,R,0,70,0,50,60,0,0,Pitcher
- Cal Quantrill,R,50,0,50,0,0,60,0,Pitcher
- Blake Snell,L,0,60,0,60,60,0,0,Pitcher
- Lucas Giolito,R,0,60,0,50,0,50,0,Pitcher
- Brady Singer,R,0,0,60,50,0,40,0,Pitcher
- Julio Urias,L,0,60,0,0,60,50,0,Pitcher
- Justin Steele,L,0,50,50,60,0,0,0,Pitcher
- Zach Davies,R,50,0,50,0,60,50,0,Pitcher
- Robbie Ray,L,0,60,60,40,0,0,0,Pitcher
- Tyler Mahle,R,60,60,0,50,0,0,50,Pitcher
- Patrick Corbin,L,0,60,60,40,0,50,0,Pitcher
- Hunter Greene,R,0,70,0,60,0,40,0,Pitcher
- Eric Lauer,L,60,60,0,50,50,0,0,Pitcher
- Pablo Lopez,R,50,50,60,0,60,60,0,Pitcher
- Kris Bubic,L,0,60,0,0,60,50,0,Pitcher
- Charlie Morton,R,50,60,70,0,60,70,0,Pitcher
- Trevor Rogers,L,0,60,0,40,0,60,0,Pitcher
- Alex Wood,L,0,0,50,50,0,60,0,Pitcher
- Dane Dunning,R,50,0,60,50,0,60,0,Pitcher
- Alek Manoah,R,0,60,50,60,0,60,0,Pitcher
- Josiah Gray,R,0,60,0,40,40,0,0,Pitcher
- Madison Bumgarner,L,60,60,0,0,40,50,0,Pitcher
- Daniel Lynch,L,0,60,0,50,0,40,0,Pitcher
- James Kaprielian,R,0,60,0,50,50,60,0,Pitcher
- Martin Perez,L,60,60,60,0,0,60,0,Pitcher
- Nestor Cortes,L,60,60,0,50,0,0,0,Pitcher
- Ranger Suarez,L,50,50,60,0,50,60,0,Pitcher
- Luis Garcia,R,50,60,60,60,50,60,60,Pitcher
- JT Brubaker,R,0,60,60,50,50,60,0,Pitcher
- Logan Webb,R,0,0,60,50,0,60,0,Pitcher
- Ian Anderson,R,0,60,0,0,30,40,0,Pitcher
- Yu Darvish,R,50,60,60,70,0,0,50,Pitcher
- Marco Gonzales,L,50,60,0,0,60,60,0,Pitcher
- Adam Wainwright,R,60,50,50,0,60,60,0,Pitcher
- Shane Bieber,R,50,60,0,50,60,0,0,Pitcher
- Chad Kuhl,R,0,0,50,50,60,50,0,Pitcher
- Zack Wheeler,R,0,60,60,50,60,0,0,Pitcher
- Alex Cobb,R,0,0,60,0,60,0,60,Pitcher
- Aaron Nola,R,50,60,60,0,60,60,0,Pitcher
- Jordan Lyles,R,0,60,50,60,60,50,0,Pitcher
- Jose Quintana,L,0,50,50,0,40,60,0,Pitcher
- Andre Pallante,R,0,50,60,60,60,0,0,Pitcher
- Yusei Kikuchi,L,60,70,0,50,0,40,0,Pitcher
- Max Scherzer,R,50,70,0,50,60,60,0,Pitcher
- Max Fried,L,0,60,50,50,60,60,0,Pitcher
- Tyler Anderson,L,60,60,60,0,0,60,0,Pitcher
- Jon Gray,R,0,60,0,50,0,40,0,Pitcher
- Cole Irvin,L,0,60,60,0,40,60,0,Pitcher
- Jameson Taillon,R,60,60,50,50,60,50,0,Pitcher
- Jordan Montgomery,L,0,60,60,0,40,50,0,Pitcher
- Chris Bassitt,R,60,60,60,50,60,60,0,Pitcher
- Brandon Woodruff,R,0,60,50,50,40,60,0,Pitcher
- Zach Plesac,R,0,60,0,40,40,40,0,Pitcher
- Reid Detmers,L,0,60,0,50,60,50,0,Pitcher
- George Kirby,R,60,60,60,60,60,60,0,Pitcher
- Erick Fedde,R,50,0,50,0,50,0,0,Pitcher
- Adrian Houser,R,0,60,60,60,60,60,0,Pitcher
- Kyle Wright,R,0,60,70,50,60,60,0,Pitcher
- Kyle Bradish,R,0,60,0,70,60,50,0,Pitcher
- Chris Flexen,R,60,60,0,50,0,60,0,Pitcher
- Shohei Ohtani,R,50,60,0,60,60,0,50,Pitcher
- Shane McClanahan,L,0,70,0,60,60,60,0,Pitcher
- Lance Lynn,R,60,50,50,0,50,0,0,Pitcher
- Merrill Kelly,R,60,60,60,0,60,60,0,Pitcher
- Jakob Junis,R,0,0,60,60,0,50,0,Pitcher
- Antonio Senzatela,R,0,60,0,50,40,40,0,Pitcher
- Mitch Keller,R,0,60,60,70,60,60,0,Pitcher
- Sandy Alcantara,R,0,60,60,60,0,60,0,Pitcher
- Miles Mikolas,R,0,60,50,50,60,0,0,Pitcher
- Jake Odorizzi,R,60,60,0,50,0,0,50,Pitcher
- Austin Gomber,L,0,60,0,50,60,40,0,Pitcher
- Zack Greinke,R,50,50,0,50,60,60,0,Pitcher
- Dylan Bundy,R,0,60,50,40,40,60,0,Pitcher
- Paolo Espino,R,0,60,0,50,60,0,0,Pitcher
- German Marquez,R,0,60,60,50,40,0,0,Pitcher
- Taylor Hearn,L,0,60,60,50,0,40,0,Pitcher
- Carlos Carrasco,R,0,60,60,50,0,50,0,Pitcher
- Chris Archer,R,0,60,0,60,40,50,0,Pitcher
- Brad Keller,R,0,50,50,60,0,0,0,Pitcher
- Joan Adon,R,0,60,0,0,60,60,0,Pitcher
- Jose Berrios,R,0,60,60,0,60,60,0,Pitcher
- Keegan Thompson,R,60,60,50,0,60,50,0,Pitcher
- Brock Burke,L,0,60,0,50,0,60,0,Pitcher
- Tony Gonsolin,R,0,60,0,50,50,0,60,Pitcher
- Clay Holmes,R,0,0,70,70,0,0,0,Pitcher
- Corey Kluber,R,60,0,60,0,50,50,0,Pitcher
- MacKenzie Gore,L,0,60,0,50,40,40,0,Pitcher
- Luis Castillo,R,0,60,60,50,0,60,0,Pitcher
- Kyle Finnegan,R,0,0,50,50,0,0,60,Pitcher
- Dakota Hudson,R,0,50,60,50,40,0,0,Pitcher
- Jonathan Heasley,R,0,60,0,50,60,50,0,Pitcher
- Jose Urena,R,0,60,60,40,0,40,0,Pitcher
- Marcus Stroman,R,50,50,50,60,0,0,50,Pitcher
- Drew Rasmussen,R,50,60,0,60,0,0,0,Pitcher
- Roansy Contreras,R,0,60,0,50,60,0,0,Pitcher
- Graham Ashcraft,R,60,0,60,70,0,0,0,Pitcher
- Tanner Scott,L,0,60,0,60,0,0,0,Pitcher
- Mike Minor,L,0,60,0,50,60,60,0,Pitcher
- Bryan Shaw,R,60,50,0,60,60,0,0,Pitcher
- Drew Smyly,L,50,0,40,0,30,0,0,Pitcher
- Carlos Estevez,R,0,60,0,60,0,40,0,Pitcher
- Taijuan Walker,R,60,60,60,50,50,0,60,Pitcher
- David Peterson,L,0,60,60,50,0,60,0,Pitcher
- Garrett Whitlock,R,0,0,60,50,0,60,0,Pitcher
- Jeffrey Springs,L,0,60,50,50,0,60,0,Pitcher
- Kyle Gibson,R,60,60,60,50,50,60,0,Pitcher
- Clayton Kershaw,L,0,50,0,50,40,0,0,Pitcher
- Tyler Wells,R,0,60,0,50,50,50,0,Pitcher
- Colin Poche,L,0,60,0,0,60,0,0,Pitcher
- Matt Wisler,R,0,60,0,50,0,0,0,Pitcher
- Mitch White,R,0,60,50,60,60,0,0,Pitcher
- Luis Severino,R,50,60,0,60,0,40,0,Pitcher
- Austin Voth,R,60,60,0,0,70,0,0,Pitcher
- Ian Kennedy,R,0,60,0,0,50,40,0,Pitcher
- Jordan Hicks,R,0,0,60,60,0,0,0,Pitcher
- Craig Kimbrel,R,0,60,0,0,60,0,0,Pitcher
- Mike Clevinger,R,50,60,50,60,0,40,0,Pitcher
- Frankie Montas,R,60,60,60,50,0,0,60,Pitcher
- Trevor Williams,R,0,60,60,50,40,50,0,Pitcher
- Phil Bickford,R,0,60,0,50,0,0,0,Pitcher
- Patrick Sandoval,L,0,60,50,60,60,60,0,Pitcher
- Jason Alexander,R,0,0,70,50,0,60,0,Pitcher
- Drew Hutchison,R,0,60,50,50,0,50,0,Pitcher
- Steven Okert,L,0,60,0,50,0,0,0,Pitcher
- Konnor Pilkington,L,0,60,0,40,50,60,0,Pitcher
- Brent Suter,L,0,50,50,0,0,60,0,Pitcher
- Joe Musgrove,R,60,50,60,60,70,60,0,Pitcher
- Rich Hill,L,60,60,0,50,60,0,0,Pitcher
- Alex Colome,R,50,60,0,0,0,0,0,Pitcher
- Zach Thompson,R,50,50,60,0,50,60,0,Pitcher
- Jesse Chavez,R,60,0,60,0,0,60,0,Pitcher
- Dylan Coleman,R,0,60,0,60,0,0,0,Pitcher
- Freddy Peralta,R,0,60,0,40,40,60,0,Pitcher
- Ross Stripling,R,0,60,50,50,60,50,0,Pitcher
- Michael Fulmer,R,0,60,60,60,0,60,0,Pitcher
- Andrew Heaney,L,0,60,0,50,0,0,0,Pitcher
- Alexis Diaz,R,0,60,0,60,0,0,0,Pitcher
- Kyle Freeland,L,0,60,60,50,40,40,0,Pitcher
- Carl Edwards Jr.,R,0,60,0,0,60,50,0,Pitcher
- Andres Munoz,R,0,70,0,50,0,0,0,Pitcher
- Bryan Baker,R,50,60,0,0,0,60,0,Pitcher
- Nathan Eovaldi,R,60,60,0,50,60,0,60,Pitcher
- Paul Blackburn,R,60,60,60,0,60,50,0,Pitcher
- Noah Syndergaard,R,0,60,60,50,40,60,0,Pitcher
- Josh Hader,L,0,0,40,50,0,0,0,Pitcher
- Joe Jimenez,R,0,60,0,50,0,50,0,Pitcher
- Keegan Akin,L,0,60,0,50,0,60,0,Pitcher
- Beau Brieske,R,0,60,50,40,0,50,0,Pitcher
- Michael Wacha,R,60,60,50,0,50,50,0,Pitcher
- Tarik Skubal,L,0,60,60,50,50,60,0,Pitcher
- Lucas Gilbreath,L,0,60,0,50,0,0,0,Pitcher
- Aaron Ashby,L,0,0,60,60,70,60,0,Pitcher
- Dean Kremer,R,60,60,60,0,60,70,0,Pitcher
- Felix Bautista,R,0,60,0,60,0,0,50,Pitcher
- Rowan Wick,R,60,60,0,50,60,0,0,Pitcher
- Alex Vesia,L,0,60,0,50,0,0,0,Pitcher
- Spenser Watkins,R,60,50,0,50,60,0,0,Pitcher
- Kenley Jansen,R,70,0,40,60,0,0,0,Pitcher
- Devin Williams,R,0,70,0,0,0,80,0,Pitcher
- Corey Knebel,R,0,60,0,0,70,0,0,Pitcher
- Jorge Lopez,R,0,0,60,60,60,60,0,Pitcher
- John Brebbia,R,0,60,0,50,0,0,0,Pitcher
- Jose Suarez,L,0,60,50,40,50,60,0,Pitcher
- Brad Boxberger,R,0,60,0,50,0,60,0,Pitcher
- Taylor Rogers,L,0,0,60,50,0,0,0,Pitcher
- Johnny Cueto,R,50,60,60,40,0,60,0,Pitcher
- Will Vest,R,0,60,0,60,0,60,0,Pitcher
- Tyler Rogers,R,0,60,0,50,0,0,0,Pitcher
- JP Sears,L,0,60,0,50,0,60,0,Pitcher
- Bryse Wilson,R,0,60,60,50,60,60,0,Pitcher
- Tim Mayza,L,0,0,60,50,0,0,0,Pitcher
- Emilio Pagan,R,50,60,0,0,0,0,60,Pitcher
- Glenn Otto,R,0,60,60,60,60,60,0,Pitcher
- Jason Foley,R,0,60,70,60,0,60,0,Pitcher
- Ryan Feltner,R,0,60,50,50,50,40,0,Pitcher
- Sonny Gray,R,50,50,50,70,80,0,0,Pitcher
- Mark Melancon,R,60,0,0,0,60,0,0,Pitcher
- Ryan Helsley,R,0,60,0,60,60,0,0,Pitcher
- Liam Hendriks,R,0,60,0,50,60,0,0,Pitcher
- Jake McGee,L,0,60,0,40,0,0,0,Pitcher
- Erasmo Ramirez,R,60,0,60,0,40,0,0,Pitcher
- Nabil Crismatt,R,0,60,60,0,60,60,0,Pitcher
- Matt Moore,L,0,60,0,0,60,60,0,Pitcher
- Mychal Givens,R,0,60,0,50,0,50,0,Pitcher
- Dallas Keuchel,L,50,50,60,40,0,60,0,Pitcher
- Jose Quijada,L,0,60,0,0,0,60,0,Pitcher
- Matt Manning,R,0,60,50,50,60,50,0,Pitcher
- David Robertson,R,60,0,0,60,60,0,0,Pitcher
- Griffin Jax,R,0,60,0,70,0,50,0,Pitcher
- Caleb Smith,L,0,60,0,40,0,40,0,Pitcher
- Vince Velasquez,R,0,60,50,50,50,50,0,Pitcher
- A.J. Minter,L,60,60,0,0,0,60,0,Pitcher
- Eli Morgan,R,0,60,0,40,0,60,0,Pitcher
- Zach Logue,L,50,60,0,0,40,60,0,Pitcher
- Edwin Diaz,R,0,60,0,60,0,0,0,Pitcher
- Alex Faedo,R,0,60,0,50,0,60,0,Pitcher
- Jose Ruiz,R,0,60,0,0,50,60,0,Pitcher
- Diego Castillo,R,0,60,70,50,0,0,0,Pitcher
- Kutter Crawford,R,60,70,0,50,60,40,0,Pitcher
- Reynaldo Lopez,R,0,60,0,50,60,0,0,Pitcher
- Jaime Barria,R,0,60,50,50,0,60,0,Pitcher
- Hunter Strickland,R,0,60,50,60,0,0,0,Pitcher
- Anthony Bass,R,0,60,50,60,0,0,0,Pitcher
- Collin McHugh,R,60,0,0,60,0,0,0,Pitcher
- Scott Barlow,R,0,50,0,60,60,0,0,Pitcher
- Jalen Beeks,L,0,60,0,0,0,60,0,Pitcher
- Emmanuel Clase,R,60,0,0,70,0,0,0,Pitcher
- Chase De Jong,R,0,60,0,50,60,0,0,Pitcher
- Jhoan Duran,R,0,70,0,0,60,0,60,Pitcher
- Trevor Richards,R,0,60,0,0,40,60,0,Pitcher
- Dillon Tate,R,0,0,60,50,0,60,0,Pitcher
- Austin Davis,L,0,60,0,50,0,60,0,Pitcher
- A.J. Puk,L,0,60,70,50,0,0,0,Pitcher
- Nick Lodolo,L,0,60,70,0,50,60,0,Pitcher
- Zach Jackson,R,0,60,0,50,0,0,0,Pitcher
- Enyel De Los Santos,R,0,60,0,50,0,50,0,Pitcher
- Daniel Bard,R,0,0,60,60,0,0,0,Pitcher
- Jake Diekman,L,0,70,60,60,0,0,0,Pitcher
- Jordan Romano,R,0,60,0,60,0,0,0,Pitcher
- Nick Nelson,R,0,60,0,50,0,60,0,Pitcher
- Ryne Stanek,R,0,60,0,60,0,0,60,Pitcher
- Camilo Doval,R,60,0,60,60,0,0,0,Pitcher
- Paul Sewald,R,0,60,0,50,0,0,0,Pitcher
- Alex Lange,R,0,0,60,0,40,60,0,Pitcher
- Lucas Luetge,L,50,0,0,60,60,0,0,Pitcher
- Andrew Bellatti,R,0,60,0,50,0,60,0,Pitcher
- Tyler Matzek,L,0,60,0,60,0,0,0,Pitcher
- Caleb Thielbar,L,0,60,0,50,60,0,0,Pitcher
- Gregory Soto,L,0,60,60,50,0,0,0,Pitcher
- Jose Alvarado,L,50,0,60,0,0,0,0,Pitcher
- Rafael Montero,R,0,60,60,50,0,60,0,Pitcher
- Trevor Stephan,R,0,60,0,60,0,0,60,Pitcher
- Aaron Civale,R,60,60,50,0,70,0,0,Pitcher
- Eduardo Rodriguez,L,60,60,50,0,0,60,0,Pitcher
- Carlos Hernandez,R,0,60,0,50,40,0,50,Pitcher
- Penn Murfee,R,0,50,50,60,0,0,0,Pitcher
- Adrian Sampson,R,50,60,50,60,0,60,0,Pitcher
- Jesus Luzardo,L,0,60,60,0,40,60,0,Pitcher
- Chris Stratton,R,0,50,0,60,60,60,0,Pitcher
- Zach Eflin,R,60,60,60,0,50,50,0,Pitcher
- Devin Smeltzer,L,50,60,0,50,60,60,0,Pitcher
- Elieser Hernandez,R,0,60,50,40,0,50,0,Pitcher
- Jeff Hoffman,R,0,70,0,60,0,60,0,Pitcher
- Hunter Harvey,R,0,60,0,0,60,0,50,Pitcher
- Aaron Loup,L,50,0,60,0,0,60,0,Pitcher
- Josh Winckowski,R,60,50,60,60,0,60,0,Pitcher
- Jonathan Loaisiga,R,0,0,60,0,50,50,0,Pitcher
- Will Smith,L,0,60,0,40,50,0,0,Pitcher
- Bryan Abreu,R,0,60,0,70,60,0,0,Pitcher
- Hoby Milner,L,0,0,60,0,60,60,0,Pitcher
- Giovanny Gallegos,R,0,60,0,50,0,40,0,Pitcher
- Phil Maton,R,0,60,60,60,70,0,0,Pitcher
- Michael Pineda,R,0,60,0,40,0,60,0,Pitcher
- Yimi Garcia,R,0,60,60,50,50,60,0,Pitcher
- Erik Swanson,R,0,60,0,50,0,0,60,Pitcher
- Adrian Martinez,R,0,0,60,40,0,70,0,Pitcher
- Robert Stephenson,R,0,60,0,60,0,0,0,Pitcher
- Amir Garrett,L,0,60,0,40,0,0,0,Pitcher
- Nick Martinez,R,50,60,50,0,60,60,0,Pitcher
- Brad Hand,L,0,60,60,60,0,0,0,Pitcher
- Kendall Graveman,R,0,60,60,60,0,60,0,Pitcher
- Adam Oller,R,50,60,50,60,40,60,0,Pitcher
- Steven Wilson,R,0,60,0,50,0,50,0,Pitcher
- Kyle Hendricks,R,0,50,50,0,60,50,0,Pitcher
- Matthew Festa,R,0,50,0,60,0,0,0,Pitcher
- Ryan Pepiot,R,0,60,0,50,0,60,0,Pitcher
- Steve Cishek,R,0,60,60,50,0,0,0,Pitcher
- Brandon Hughes,L,0,60,0,50,0,0,0,Pitcher
- David Bednar,R,0,60,0,0,60,0,50,Pitcher
- Matt Bush,R,60,60,0,0,60,0,0,Pitcher
- Ryan Yarbrough,L,50,0,50,0,60,60,0,Pitcher
- Adam Ottavino,R,50,60,70,60,0,60,0,Pitcher
- Hirokazu Sawamura,R,0,60,0,50,0,0,60,Pitcher
- Sam Moll,L,0,0,50,60,0,0,0,Pitcher
- Hector Neris,R,0,70,60,50,0,0,60,Pitcher
- Wil Crowe,R,0,60,60,60,0,50,0,Pitcher
- Domingo Acevedo,R,0,60,0,40,0,60,0,Pitcher
- Luis Cessa,R,0,60,60,60,0,60,0,Pitcher
- Matt Foster,R,0,60,0,50,40,40,0,Pitcher
- Ryan Brasier,R,0,60,60,60,0,0,0,Pitcher
- Jarlin Garcia,L,0,60,0,50,0,60,0,Pitcher
- Tylor Megill,R,0,60,0,60,0,60,0,Pitcher
- Jose Cuas,R,0,0,60,50,0,0,0,Pitcher
- Bailey Falter,L,0,60,50,50,40,0,0,Pitcher
- Aaron Sanchez,R,0,60,60,0,60,60,0,Pitcher
- Rony Garcia,R,0,60,60,0,40,40,0,Pitcher
- Tanner Banks,L,0,50,0,50,50,50,0,Pitcher
- Mike Mayers,R,50,60,0,50,0,60,0,Pitcher
- Braxton Garrett,L,0,60,60,60,60,70,0,Pitcher
- Josh Winder,R,0,60,0,50,50,40,0,Pitcher
- Matt Swarmer,R,0,60,0,50,0,0,0,Pitcher
- Luke Weaver,R,0,60,0,60,0,60,0,Pitcher
- Jordan Weems,R,0,60,0,60,0,50,0,Pitcher
- Zack Littell,R,0,60,0,50,0,0,50,Pitcher
- Art Warren,R,0,60,0,60,0,0,0,Pitcher
- Cionel Perez,L,0,60,60,70,0,0,0,Pitcher
- Trevor Megill,R,0,60,0,70,70,0,0,Pitcher
- Cristopher Sanchez,L,0,0,60,50,0,80,0,Pitcher
- Jeurys Familia,R,0,60,70,50,0,0,60,Pitcher
- Kyle Nelson,L,0,50,0,50,0,0,0,Pitcher
- Joely Rodriguez,L,0,60,60,50,0,60,0,Pitcher
- Tyler Alexander,L,60,60,50,50,0,50,0,Pitcher
- Tanner Houck,R,0,60,70,60,0,0,60,Pitcher
- Dennis Santana,R,0,0,60,50,0,60,0,Pitcher
- Zach Pop,R,0,0,70,60,0,0,0,Pitcher
- Andrew Wantz,R,50,60,0,50,0,50,0,Pitcher
- Steven Matz,L,0,0,60,0,60,60,0,Pitcher
- Josh Staumont,R,0,60,50,0,60,0,0,Pitcher
- Evan Phillips,R,50,60,60,60,0,0,0,Pitcher
- Edward Cabrera,R,0,60,60,50,60,60,0,Pitcher
- Jacob deGrom,R,0,60,0,60,0,60,0,Pitcher
- Justin Lawrence,R,0,0,60,60,0,0,0,Pitcher
- Drew Smith,R,0,60,0,60,60,40,0,Pitcher
- Tim Hill,L,60,60,60,50,0,0,0,Pitcher
- Tanner Rainey,R,0,60,0,60,0,0,0,Pitcher
- Jake Bird,R,60,0,60,0,60,0,0,Pitcher
- Davis Martin,R,0,60,0,60,60,60,0,Pitcher
- Walker Buehler,R,60,60,0,60,60,50,0,Pitcher
- Tucker Davidson,L,0,60,50,60,50,0,0,Pitcher
- Shawn Armstrong,R,60,60,60,60,0,0,0,Pitcher
- Taylor Clarke,R,0,60,0,50,0,60,0,Pitcher
- John King,L,50,0,70,60,0,60,0,Pitcher
- Garrett Hill,R,0,60,50,50,60,50,0,Pitcher
- Michael Rucker,R,0,60,0,60,60,60,0,Pitcher
- Spencer Howard,R,50,60,0,0,60,0,0,Pitcher
- John Schreiber,R,0,60,60,50,0,60,0,Pitcher
- Ryan Tepera,R,0,60,60,50,0,60,0,Pitcher
- Bailey Ober,R,0,60,0,50,60,60,0,Pitcher
- Tommy Henry,L,0,60,0,40,40,60,0,Pitcher
- Michael Lorenzen,R,50,60,60,60,0,60,0,Pitcher
- Wandy Peralta,L,0,0,60,50,0,60,0,Pitcher
- Joe Mantiply,L,0,0,70,0,40,70,0,Pitcher
- Albert Abreu,R,0,60,50,50,0,60,0,Pitcher
- Joel Payamps,R,0,60,60,60,0,60,0,Pitcher
- Adam Cimber,R,0,60,50,50,0,0,0,Pitcher
- Aroldis Chapman,L,0,60,60,60,0,0,60,Pitcher
- Vladimir Gutierrez,R,0,60,0,60,60,40,0,Pitcher
- Cory Abbott,R,0,60,0,40,40,0,0,Pitcher
- Chris Martin,R,60,60,60,0,0,0,60,Pitcher
- Joe Kelly,R,0,0,60,0,60,60,0,Pitcher
- Adrian Morejon,L,0,60,0,60,60,0,0,Pitcher
- Bruce Zimmermann,L,0,60,60,40,40,60,0,Pitcher
- Dany Jimenez,R,0,60,0,50,0,0,0,Pitcher
- James Karinchak,R,0,60,0,0,40,0,0,Pitcher
- Seth Lugo,R,0,60,60,50,70,0,0,Pitcher
- Richard Bleier,L,50,60,70,50,0,60,0,Pitcher
- Tyler Duffey,R,0,60,60,0,60,0,0,Pitcher
- Ty Blach,L,50,0,60,0,50,60,0,Pitcher
- Matt Brash,R,0,60,0,60,60,0,0,Pitcher
- David Phelps,R,60,60,50,0,50,60,0,Pitcher
- Caleb Ferguson,L,0,60,0,0,70,0,0,Pitcher
- Clarke Schmidt,R,0,60,60,60,70,0,0,Pitcher
- Ryan Thompson,R,0,60,60,50,0,0,0,Pitcher
- Dylan Lee,L,0,60,0,40,0,50,0,Pitcher
- Joey Krehbiel,R,60,60,0,0,0,60,0,Pitcher
- Oliver Ortega,R,0,60,0,0,50,0,0,Pitcher
- Buck Farmer,R,0,60,0,50,0,60,0,Pitcher
- Johan Oviedo,R,0,60,0,50,50,60,0,Pitcher
- Victor Arano,R,0,60,60,50,0,0,0,Pitcher
- Jovani Moran,L,0,60,0,0,0,50,0,Pitcher
- Sam Hentges,L,0,60,60,60,60,0,0,Pitcher
- Domingo German,R,0,60,60,0,40,60,0,Pitcher
- Jimmy Lambert,R,0,60,0,50,60,60,0,Pitcher
- Noe Ramirez,R,0,60,0,0,50,60,0,Pitcher
- Sam Long,L,0,60,0,0,50,40,0,Pitcher
- Daniel Norris,L,0,60,60,50,0,60,0,Pitcher
- Jason Adam,R,0,60,0,60,0,60,0,Pitcher
- Jimmy Herget,R,0,0,60,50,60,60,0,Pitcher
- Craig Stammen,R,50,0,50,60,60,0,0,Pitcher
- Reiver Sanmartin,L,0,60,60,50,0,60,0,Pitcher
- Nick Sandlin,R,0,60,60,50,0,0,60,Pitcher
- Cole Sulser,R,0,60,0,50,0,60,0,Pitcher
- Josh Fleming,L,50,0,70,0,50,70,0,Pitcher
- Jackson Stephens,R,0,60,60,0,70,50,0,Pitcher
- T.J. McFarland,L,0,0,70,50,0,70,0,Pitcher
- Dominic Leone,R,60,60,0,60,0,0,0,Pitcher
- Scott Effross,R,0,60,60,50,0,60,0,Pitcher
- Louis Head,R,0,60,0,60,0,0,0,Pitcher
- Yunior Marte,R,0,60,60,50,0,0,0,Pitcher
- Matt Barnes,R,0,70,0,0,60,60,0,Pitcher
- Ron Marinaccio,R,0,70,0,50,0,60,0,Pitcher
- Andrew Chafin,L,0,60,60,50,0,0,0,Pitcher
- Reyes Moronta,R,0,60,0,50,0,60,0,Pitcher
- Dinelson Lamet,R,0,60,0,50,0,0,0,Pitcher
- Trevor Kelley,R,0,0,50,0,60,60,0,Pitcher
- Andres Machado,R,0,60,60,50,0,40,0,Pitcher
- Austin Pruitt,R,0,50,0,50,60,50,0,Pitcher
- Brooks Raley,L,60,0,60,60,0,60,0,Pitcher
- Kirby Snead,L,0,60,60,50,0,70,0,Pitcher
- Brayan Bello,R,0,60,70,60,0,60,0,Pitcher
- Robert Suarez,R,60,60,50,0,0,60,0,Pitcher
- Michael King,R,0,60,60,60,0,60,0,Pitcher
- Peter Strzelecki,R,0,60,0,60,0,60,0,Pitcher
- Tyler Beede,R,0,60,60,50,60,60,0,Pitcher
- Jharel Cotton,R,0,60,0,50,0,60,0,Pitcher
- Jhoulys Chacin,R,0,50,60,50,60,0,0,Pitcher
- Tommy Nance,R,0,60,70,60,80,0,0,Pitcher
- Sean Newcomb,L,60,60,0,0,60,0,0,Pitcher
- Cole Sands,R,50,60,0,0,60,0,60,Pitcher
- Joe Barlow,R,0,60,0,50,40,0,0,Pitcher
- Lou Trivino,R,50,60,60,60,0,70,0,Pitcher
- Brett Martin,L,0,60,60,50,40,0,0,Pitcher
- Collin Snider,R,0,0,60,60,0,0,0,Pitcher
- Anibal Sanchez,R,60,60,50,50,30,60,0,Pitcher
- Raisel Iglesias,R,0,60,60,50,0,60,0,Pitcher
- Dylan Floro,R,0,60,60,50,0,70,0,Pitcher
- Garrett Richards,R,0,50,0,60,0,60,0,Pitcher
- Jack Flaherty,R,0,50,50,50,60,0,0,Pitcher
- Connor Brogdon,R,60,70,0,0,0,60,0,Pitcher
- Jandel Gustave,R,0,60,60,60,0,0,0,Pitcher
- Seranthony Dominguez,R,0,60,60,60,0,0,0,Pitcher
- Trent Thornton,R,0,60,0,60,60,0,0,Pitcher
- Jose Leclerc,R,60,60,0,50,0,40,0,Pitcher
- Bryce Elder,R,60,0,60,50,0,60,0,Pitcher
- Zack Thompson,L,50,60,0,0,60,50,0,Pitcher
- Duane Underwood Jr.,R,50,60,60,0,60,60,0,Pitcher
- Brusdar Graterol,R,60,60,60,60,0,0,0,Pitcher
- Genesis Cabrera,L,0,60,50,0,60,50,0,Pitcher
- Ian Gibaut,R,60,60,0,60,0,60,0,Pitcher
- Matt Strahm,L,0,70,60,50,40,60,0,Pitcher
- Jake Woodford,R,0,60,60,60,60,0,0,Pitcher
- Cole Ragans,L,50,60,0,0,60,60,0,Pitcher
- Joel Kuhnel,R,0,60,60,50,0,60,0,Pitcher
- Humberto Castellanos,R,0,50,60,40,60,60,0,Pitcher
- Mark Leiter Jr.,R,50,60,50,0,60,40,0,Pitcher
- Tyler Danish,R,0,60,70,0,50,60,0,Pitcher
- Max Castillo,R,0,60,0,50,0,60,0,Pitcher
- Daniel Castano,L,50,50,60,50,0,50,0,Pitcher
- David Price,L,50,60,60,0,0,60,0,Pitcher
- Yohan Ramirez,R,0,60,60,60,0,0,0,Pitcher
- Justin Dunn,R,0,60,0,50,50,0,0,Pitcher
- Ryan Pressly,R,0,60,0,60,80,0,0,Pitcher
- J.B. Wendelken,R,0,60,60,60,0,60,0,Pitcher
- Trevor Gott,R,60,60,60,0,60,0,0,Pitcher
- Huascar Brazoban,R,50,60,60,0,0,60,0,Pitcher
- Miguel Castro,R,0,0,60,60,0,60,0,Pitcher
- Jared Koenig,L,50,50,50,0,60,50,0,Pitcher
- Eric Stout,L,0,60,0,50,70,60,0,Pitcher
- Chasen Shreve,L,0,60,0,50,0,0,50,Pitcher
- Daulton Jefferies,R,50,60,60,0,40,60,0,Pitcher
- Anthony Banda,L,0,60,60,0,50,60,0,Pitcher
- Wily Peralta,R,0,60,50,50,0,0,50,Pitcher
- Wade Miley,L,50,60,0,40,0,60,0,Pitcher
- Ross Detwiler,L,50,60,60,0,0,0,0,Pitcher
- Chase Silseth,R,0,60,60,60,0,0,50,Pitcher
- Wyatt Mills,R,0,60,50,50,0,0,0,Pitcher
- Seth Martinez,R,0,60,60,50,0,60,0,Pitcher
- Tyler Gilbert,L,60,60,50,0,60,0,50,Pitcher
- Kirk McCarty,L,60,60,0,0,50,40,0,Pitcher
- Joe Smith,R,0,60,60,50,0,0,0,Pitcher
- Packy Naughton,L,0,60,50,40,0,60,0,Pitcher
- Dauri Moreta,R,0,60,50,50,0,40,0,Pitcher
- Lance McCullers Jr.,R,50,0,60,60,70,70,0,Pitcher
- Matthew Liberatore,L,0,60,50,50,60,50,0,Pitcher
- Dillon Peters,L,0,60,50,50,60,40,0,Pitcher
- Ralph Garza Jr.,R,60,60,50,50,0,60,0,Pitcher
- Nick Wittgren,R,60,60,60,50,0,60,0,Pitcher
- Manny Banuelos,L,0,60,60,50,40,60,0,Pitcher
- Dustin May,R,50,60,60,0,60,60,0,Pitcher
+Name,FB,SL,CB,CH,T,Class,H,W
+A.J. Minter,60,0,0,60,L,Pitcher,50,60
+A.J. Puk,70,50,0,0,L,Pitcher,80,70
+Aaron Ashby,60,60,70,60,L,Pitcher,60,40
+Aaron Civale,60,0,70,0,R,Pitcher,60,60
+Aaron Loup,60,0,0,60,L,Pitcher,40,60
+Aaron Nola,60,0,60,60,R,Pitcher,60,50
+Aaron Sanchez,60,0,60,60,R,Pitcher,70,60
+Adam Cimber,60,50,0,0,R,Pitcher,60,50
+Adam Oller,60,60,40,60,R,Pitcher,70,60
+Adam Ottavino,70,60,0,60,R,Pitcher,70,70
+Adam Wainwright,60,0,60,60,R,Pitcher,80,70
+Adrian Houser,60,60,60,60,R,Pitcher,60,60
+Adrian Martinez,60,40,0,70,R,Pitcher,60,60
+Adrian Morejon,60,60,60,0,L,Pitcher,40,60
+Adrian Sampson,60,60,0,60,R,Pitcher,60,60
+Albert Abreu,60,50,0,60,R,Pitcher,60,50
+Alek Manoah,60,60,0,60,R,Pitcher,70,80
+Alex Cobb,60,0,60,0,R,Pitcher,60,50
+Alex Colome,60,0,0,0,R,Pitcher,50,60
+Alex Faedo,60,50,0,60,R,Pitcher,70,60
+Alex Lange,60,0,40,60,R,Pitcher,60,50
+Alex Vesia,60,50,0,0,L,Pitcher,50,60
+Alex Wood,50,50,0,60,L,Pitcher,70,60
+Alexis Diaz,60,60,0,0,R,Pitcher,60,60
+Amir Garrett,60,40,0,0,L,Pitcher,70,70
+Andre Pallante,60,60,60,0,R,Pitcher,50,50
+Andres Machado,60,50,0,40,R,Pitcher,50,70
+Andres Munoz,70,50,0,0,R,Pitcher,60,60
+Andrew Bellatti,60,50,0,60,R,Pitcher,50,50
+Andrew Chafin,60,50,0,0,L,Pitcher,60,70
+Andrew Heaney,60,50,0,0,L,Pitcher,60,50
+Andrew Wantz,60,50,0,50,R,Pitcher,70,70
+Anibal Sanchez,60,50,30,60,R,Pitcher,50,50
+Anthony Banda,60,0,50,60,L,Pitcher,60,60
+Anthony Bass,60,60,0,0,R,Pitcher,60,50
+Antonio Senzatela,60,50,40,40,R,Pitcher,50,70
+Aroldis Chapman,60,60,0,0,L,Pitcher,70,60
+Art Warren,60,60,0,0,R,Pitcher,60,70
+Austin Davis,60,50,0,60,L,Pitcher,70,70
+Austin Gomber,60,50,60,40,L,Pitcher,70,60
+Austin Pruitt,50,50,60,50,R,Pitcher,40,40
+Austin Voth,60,0,70,0,R,Pitcher,60,60
+Bailey Falter,60,50,40,0,L,Pitcher,70,40
+Bailey Ober,60,50,60,60,R,Pitcher,80,80
+Beau Brieske,60,40,0,50,R,Pitcher,60,50
+Blake Snell,60,60,60,0,L,Pitcher,70,60
+Brad Boxberger,60,50,0,60,R,Pitcher,40,60
+Brad Hand,60,60,0,0,L,Pitcher,60,60
+Brad Keller,50,60,0,0,R,Pitcher,70,80
+Brady Singer,60,50,0,40,R,Pitcher,70,60
+Brandon Hughes,60,50,0,0,L,Pitcher,60,60
+Brandon Woodruff,60,50,40,60,R,Pitcher,70,70
+Braxton Garrett,60,60,60,70,L,Pitcher,60,50
+Brayan Bello,70,60,0,60,R,Pitcher,50,40
+Brent Suter,50,0,0,60,L,Pitcher,70,60
+Brett Martin,60,50,40,0,L,Pitcher,70,50
+Brock Burke,60,50,0,60,L,Pitcher,70,60
+Brooks Raley,60,60,0,60,L,Pitcher,60,50
+Bruce Zimmermann,60,40,40,60,L,Pitcher,50,60
+Brusdar Graterol,60,60,0,0,R,Pitcher,50,80
+Bryan Abreu,60,70,60,0,R,Pitcher,50,60
+Bryan Baker,60,0,0,60,R,Pitcher,70,70
+Bryan Shaw,60,60,60,0,R,Pitcher,50,60
+Bryce Elder,60,50,0,60,R,Pitcher,60,60
+Bryse Wilson,60,50,60,60,R,Pitcher,50,70
+Buck Farmer,60,50,0,60,R,Pitcher,70,70
+Cal Quantrill,50,0,0,60,R,Pitcher,60,50
+Caleb Ferguson,60,0,70,0,L,Pitcher,60,60
+Caleb Smith,60,40,0,40,L,Pitcher,50,50
+Caleb Thielbar,60,50,60,0,L,Pitcher,50,50
+Camilo Doval,60,60,0,0,R,Pitcher,60,40
+Carlos Carrasco,60,50,0,50,R,Pitcher,70,60
+Carlos Estevez,60,60,0,40,R,Pitcher,70,80
+Carlos Hernandez,60,50,40,0,R,Pitcher,70,70
+Carlos Rodon,60,60,60,0,L,Pitcher,60,70
+Chad Kuhl,50,50,60,50,R,Pitcher,60,50
+Charlie Morton,70,0,60,70,R,Pitcher,70,60
+Chase Silseth,60,60,0,0,R,Pitcher,50,60
+Chasen Shreve,60,50,0,0,L,Pitcher,70,40
+Chris Archer,60,60,40,50,R,Pitcher,60,50
+Chris Bassitt,60,50,60,60,R,Pitcher,70,60
+Chris Flexen,60,50,0,60,R,Pitcher,60,60
+Chris Martin,60,0,0,0,R,Pitcher,80,60
+Chris Stratton,50,60,60,60,R,Pitcher,60,50
+Cionel Perez,60,70,0,0,L,Pitcher,40,30
+Clarke Schmidt,60,60,70,0,R,Pitcher,50,50
+Clay Holmes,70,70,0,0,R,Pitcher,70,70
+Clayton Kershaw,50,50,40,0,L,Pitcher,70,60
+Cole Irvin,60,0,40,60,L,Pitcher,70,60
+Cole Ragans,60,0,60,60,L,Pitcher,70,50
+Cole Sands,60,0,60,0,R,Pitcher,60,60
+Cole Sulser,60,50,0,60,R,Pitcher,50,50
+Colin Poche,60,0,60,0,L,Pitcher,60,60
+Collin McHugh,60,60,0,0,R,Pitcher,60,50
+Collin Snider,60,60,0,0,R,Pitcher,70,50
+Connor Brogdon,70,0,0,60,R,Pitcher,70,50
+Corbin Burnes,60,70,50,50,R,Pitcher,60,60
+Corey Kluber,60,0,50,50,R,Pitcher,70,60
+Corey Knebel,60,0,70,0,R,Pitcher,60,60
+Cory Abbott,60,40,40,0,R,Pitcher,50,60
+Craig Kimbrel,60,0,60,0,R,Pitcher,50,60
+Craig Stammen,50,60,60,0,R,Pitcher,60,60
+Cristian Javier,60,50,60,0,R,Pitcher,50,60
+Cristopher Sanchez,60,50,0,80,L,Pitcher,50,30
+Dakota Hudson,60,50,40,0,R,Pitcher,70,60
+Dallas Keuchel,60,40,0,60,L,Pitcher,60,50
+Dane Dunning,60,50,0,60,R,Pitcher,70,60
+Daniel Bard,60,60,0,0,R,Pitcher,70,60
+Daniel Castano,60,50,0,50,L,Pitcher,60,70
+Daniel Lynch,60,50,0,40,L,Pitcher,70,50
+Daniel Norris,60,50,0,60,L,Pitcher,60,50
+Dany Jimenez,60,50,0,0,R,Pitcher,50,40
+Daulton Jefferies,60,0,40,60,R,Pitcher,50,40
+Dauri Moreta,60,50,0,40,R,Pitcher,60,40
+David Bednar,60,0,60,0,R,Pitcher,50,70
+David Peterson,60,50,0,60,L,Pitcher,70,70
+David Phelps,60,0,50,60,R,Pitcher,60,50
+David Price,60,0,0,60,L,Pitcher,70,60
+David Robertson,60,60,60,0,R,Pitcher,40,50
+Davis Martin,60,60,60,60,R,Pitcher,60,50
+Dean Kremer,60,0,60,70,R,Pitcher,60,50
+Dennis Santana,60,50,0,60,R,Pitcher,60,50
+Devin Smeltzer,60,50,60,60,L,Pitcher,60,50
+Devin Williams,70,0,0,80,R,Pitcher,60,50
+Diego Castillo,70,50,0,0,R,Pitcher,40,40
+Diego Castillo,70,50,0,0,R,Pitcher,60,80
+Dillon Peters,60,50,60,40,L,Pitcher,40,50
+Dillon Tate,60,50,0,60,R,Pitcher,60,50
+Dinelson Lamet,60,50,0,0,R,Pitcher,60,60
+Domingo Acevedo,60,40,0,60,R,Pitcher,80,70
+Domingo German,60,0,40,60,R,Pitcher,60,40
+Dominic Leone,60,60,0,0,R,Pitcher,40,60
+Drew Hutchison,60,50,0,50,R,Pitcher,60,60
+Drew Rasmussen,60,60,0,0,R,Pitcher,50,60
+Drew Smith,60,60,60,40,R,Pitcher,60,50
+Drew Smyly,50,0,30,0,L,Pitcher,60,50
+Dustin May,60,0,60,60,R,Pitcher,70,40
+Dylan Bundy,60,40,40,60,R,Pitcher,50,60
+Dylan Cease,60,50,60,0,R,Pitcher,60,50
+Dylan Coleman,60,60,0,0,R,Pitcher,70,70
+Dylan Floro,60,50,0,70,R,Pitcher,60,50
+Dylan Lee,60,40,0,50,L,Pitcher,60,60
+Eduardo Rodriguez,60,0,0,60,L,Pitcher,60,70
+Edward Cabrera,60,50,60,60,R,Pitcher,70,60
+Edwin Diaz,60,60,0,0,R,Pitcher,60,30
+Eli Morgan,60,40,0,60,R,Pitcher,40,50
+Elieser Hernandez,60,40,0,50,R,Pitcher,50,60
+Emilio Pagan,60,0,0,0,R,Pitcher,60,50
+Emmanuel Clase,60,70,0,0,R,Pitcher,60,50
+Erasmo Ramirez,60,0,40,0,R,Pitcher,50,60
+Eric Lauer,60,50,50,0,L,Pitcher,60,60
+Eric Stout,60,50,70,60,L,Pitcher,60,50
+Erick Fedde,50,0,50,0,R,Pitcher,70,50
+Erik Swanson,60,50,0,0,R,Pitcher,60,60
+Evan Phillips,60,60,0,0,R,Pitcher,60,60
+Felix Bautista,60,60,0,0,R,Pitcher,70,50
+Framber Valdez,60,0,80,60,L,Pitcher,40,70
+Frankie Montas,60,50,0,0,R,Pitcher,60,80
+Freddy Peralta,60,40,40,60,R,Pitcher,40,50
+Garrett Hill,60,50,60,50,R,Pitcher,50,40
+Garrett Richards,50,60,0,60,R,Pitcher,60,60
+Garrett Whitlock,60,50,0,60,R,Pitcher,70,60
+Genesis Cabrera,60,0,60,50,L,Pitcher,60,40
+George Kirby,60,60,60,60,R,Pitcher,70,60
+German Marquez,60,50,40,0,R,Pitcher,50,70
+Gerrit Cole,60,60,60,40,R,Pitcher,70,60
+Giovanny Gallegos,60,50,0,40,R,Pitcher,60,60
+Glenn Otto,60,60,60,60,R,Pitcher,60,70
+Graham Ashcraft,60,70,0,0,R,Pitcher,60,70
+Gregory Soto,60,50,0,0,L,Pitcher,50,70
+Griffin Jax,60,70,0,50,R,Pitcher,60,50
+Hector Neris,70,50,0,0,R,Pitcher,60,60
+Hirokazu Sawamura,60,50,0,0,R,Pitcher,50,60
+Hoby Milner,60,0,60,60,L,Pitcher,60,40
+Huascar Brazoban,60,0,0,60,R,Pitcher,60,30
+Humberto Castellanos,60,40,60,60,R,Pitcher,40,60
+Hunter Greene,70,60,0,40,R,Pitcher,70,70
+Hunter Harvey,60,0,60,0,R,Pitcher,60,60
+Hunter Strickland,60,60,0,0,R,Pitcher,60,60
+Ian Anderson,60,0,30,40,R,Pitcher,60,40
+Ian Gibaut,60,60,0,60,R,Pitcher,60,70
+Ian Kennedy,60,0,50,40,R,Pitcher,50,60
+J.B. Wendelken,60,60,0,60,R,Pitcher,50,70
+Jack Flaherty,50,50,60,0,R,Pitcher,70,60
+Jackson Stephens,60,0,70,50,R,Pitcher,60,60
+Jacob deGrom,60,60,0,60,R,Pitcher,70,40
+Jaime Barria,60,50,0,60,R,Pitcher,50,60
+Jake Bird,60,0,60,0,R,Pitcher,60,50
+Jake Diekman,70,60,0,0,L,Pitcher,70,50
+Jake McGee,60,40,0,0,L,Pitcher,70,60
+Jake Odorizzi,60,50,0,0,R,Pitcher,60,50
+Jake Woodford,60,60,60,0,R,Pitcher,70,60
+Jakob Junis,60,60,0,50,R,Pitcher,60,60
+Jalen Beeks,60,0,0,60,L,Pitcher,40,60
+James Kaprielian,60,50,50,60,R,Pitcher,60,60
+James Karinchak,60,0,40,0,R,Pitcher,60,60
+Jameson Taillon,60,50,60,50,R,Pitcher,70,70
+Jandel Gustave,60,60,0,0,R,Pitcher,60,60
+Jared Koenig,50,0,60,50,L,Pitcher,70,70
+Jarlin Garcia,60,50,0,60,L,Pitcher,60,60
+Jason Adam,60,60,0,60,R,Pitcher,60,60
+Jason Alexander,70,50,0,60,R,Pitcher,60,50
+Jason Foley,70,60,0,60,R,Pitcher,70,60
+Jeff Hoffman,70,60,0,60,R,Pitcher,70,70
+Jeffrey Springs,60,50,0,60,L,Pitcher,60,60
+Jesse Chavez,60,0,0,60,R,Pitcher,50,40
+Jesus Luzardo,60,0,40,60,L,Pitcher,50,60
+Jeurys Familia,70,50,0,0,R,Pitcher,60,70
+Jharel Cotton,60,50,0,60,R,Pitcher,40,50
+Jhoan Duran,70,0,60,0,R,Pitcher,70,70
+Jhoulys Chacin,60,50,60,0,R,Pitcher,60,60
+Jimmy Herget,60,50,60,60,R,Pitcher,60,40
+Jimmy Lambert,60,50,60,60,R,Pitcher,60,50
+Joan Adon,60,0,60,60,R,Pitcher,60,70
+Joe Barlow,60,50,40,0,R,Pitcher,60,60
+Joe Jimenez,60,50,0,50,R,Pitcher,60,80
+Joe Kelly,60,0,60,60,R,Pitcher,50,40
+Joe Mantiply,70,0,40,70,L,Pitcher,70,60
+Joe Musgrove,60,60,70,60,R,Pitcher,70,70
+Joe Ryan,60,40,50,60,R,Pitcher,60,50
+Joe Smith,60,50,0,0,R,Pitcher,60,60
+Joel Kuhnel,60,50,0,60,R,Pitcher,70,80
+Joel Payamps,60,60,0,60,R,Pitcher,60,60
+Joely Rodriguez,60,50,0,60,L,Pitcher,50,50
+Joey Krehbiel,60,0,0,60,R,Pitcher,60,70
+Johan Oviedo,60,50,50,60,R,Pitcher,70,70
+John Brebbia,60,50,0,0,R,Pitcher,50,50
+John King,70,60,0,60,L,Pitcher,60,60
+John Schreiber,60,50,0,60,R,Pitcher,60,60
+Johnny Cueto,60,40,0,60,R,Pitcher,40,60
+Jon Gray,60,50,0,40,R,Pitcher,70,60
+Jonathan Heasley,60,50,60,50,R,Pitcher,60,60
+Jonathan Loaisiga,60,0,50,50,R,Pitcher,40,30
+Jordan Hicks,60,60,0,0,R,Pitcher,60,60
+Jordan Lyles,60,60,60,50,R,Pitcher,70,70
+Jordan Montgomery,60,0,40,50,L,Pitcher,70,60
+Jordan Romano,60,60,0,0,R,Pitcher,70,60
+Jordan Weems,60,60,0,50,R,Pitcher,70,60
+Jorge Lopez,60,60,60,60,R,Pitcher,60,50
+Jose Alvarado,60,0,0,0,L,Pitcher,60,70
+Jose Berrios,60,0,60,60,R,Pitcher,50,50
+Jose Cuas,60,50,0,0,R,Pitcher,60,50
+Jose Leclerc,60,50,0,40,R,Pitcher,50,50
+Jose Quijada,60,0,0,60,L,Pitcher,40,60
+Jose Quintana,50,0,40,60,L,Pitcher,50,60
+Jose Ruiz,60,0,50,60,R,Pitcher,50,70
+Jose Suarez,60,40,50,60,L,Pitcher,40,60
+Jose Urena,60,40,0,40,R,Pitcher,60,50
+Jose Urquidy,60,50,60,50,R,Pitcher,50,60
+Josh Fleming,70,0,50,70,L,Pitcher,60,60
+Josh Hader,40,50,0,0,L,Pitcher,60,40
+Josh Staumont,60,0,60,0,R,Pitcher,60,50
+Josh Winckowski,60,60,0,60,R,Pitcher,70,50
+Josh Winder,60,50,50,40,R,Pitcher,70,60
+Josiah Gray,60,40,40,0,R,Pitcher,50,50
+Jovani Moran,60,0,0,50,L,Pitcher,50,40
+JP Sears,60,50,0,60,L,Pitcher,40,40
+JT Brubaker,60,50,50,60,R,Pitcher,60,40
+Julio Urias,60,0,60,50,L,Pitcher,50,60
+Justin Dunn,60,50,50,0,R,Pitcher,60,40
+Justin Lawrence,60,60,0,0,R,Pitcher,60,60
+Justin Steele,50,60,0,0,L,Pitcher,60,50
+Justin Verlander,70,50,60,0,R,Pitcher,70,70
+Keegan Akin,60,50,0,60,L,Pitcher,40,70
+Keegan Thompson,60,0,60,50,R,Pitcher,50,60
+Kendall Graveman,60,60,0,60,R,Pitcher,60,50
+Kenley Jansen,70,60,0,0,R,Pitcher,70,80
+Kevin Gausman,70,50,0,0,R,Pitcher,60,50
+Kirby Snead,60,50,0,70,L,Pitcher,50,60
+Kirk McCarty,60,0,50,40,L,Pitcher,30,40
+Konnor Pilkington,60,40,50,60,L,Pitcher,60,70
+Kris Bubic,60,0,60,50,L,Pitcher,60,60
+Kutter Crawford,70,50,60,40,R,Pitcher,50,60
+Kyle Bradish,60,70,60,50,R,Pitcher,70,60
+Kyle Finnegan,50,50,0,0,R,Pitcher,60,50
+Kyle Freeland,60,50,40,40,L,Pitcher,70,50
+Kyle Gibson,60,50,50,60,R,Pitcher,70,60
+Kyle Hendricks,50,0,60,50,R,Pitcher,60,50
+Kyle Nelson,50,50,0,0,L,Pitcher,50,40
+Kyle Wright,70,50,60,60,R,Pitcher,70,60
+Lance Lynn,60,0,50,0,R,Pitcher,70,80
+Liam Hendriks,60,50,60,0,R,Pitcher,50,70
+Logan Gilbert,60,50,50,60,R,Pitcher,70,60
+Logan Webb,60,50,0,60,R,Pitcher,50,60
+Lou Trivino,60,60,0,70,R,Pitcher,70,70
+Louis Head,60,60,0,0,R,Pitcher,50,40
+Lucas Gilbreath,60,50,0,0,L,Pitcher,50,40
+Lucas Giolito,60,50,0,50,R,Pitcher,70,70
+Lucas Luetge,50,60,60,0,L,Pitcher,70,50
+Luis Castillo,60,50,0,60,R,Pitcher,60,50
+Luis Castillo,60,50,0,60,R,Pitcher,60,60
+Luis Cessa,60,60,0,60,R,Pitcher,50,50
+Luis Garcia,60,60,50,60,R,Pitcher,50,70
+Luis Garcia,60,60,50,60,R,Pitcher,60,60
+Luis Garcia,60,60,50,60,R,Pitcher,40,40
+Luis Garcia,60,60,50,60,R,Pitcher,60,70
+Luis Severino,60,60,0,40,R,Pitcher,60,60
+Luke Weaver,60,60,0,60,R,Pitcher,60,40
+MacKenzie Gore,60,50,40,40,L,Pitcher,60,50
+Madison Bumgarner,60,0,40,50,L,Pitcher,70,80
+Manny Banuelos,60,50,40,60,L,Pitcher,40,60
+Marco Gonzales,60,0,60,60,L,Pitcher,50,50
+Marcus Stroman,50,60,0,0,R,Pitcher,30,40
+Mark Melancon,60,0,60,0,R,Pitcher,50,60
+Martin Perez,60,0,0,60,L,Pitcher,50,50
+Matt Barnes,70,0,60,60,R,Pitcher,70,50
+Matt Brash,60,60,60,0,R,Pitcher,50,40
+Matt Bush,60,0,60,0,R,Pitcher,30,40
+Matt Foster,60,50,40,40,R,Pitcher,50,60
+Matt Manning,60,50,60,50,R,Pitcher,70,50
+Matt Moore,60,0,60,60,L,Pitcher,60,60
+Matt Strahm,70,50,40,60,L,Pitcher,60,50
+Matt Swarmer,60,50,0,0,R,Pitcher,70,50
+Matt Wisler,60,50,0,0,R,Pitcher,60,60
+Matthew Festa,50,60,0,0,R,Pitcher,50,50
+Matthew Liberatore,60,50,60,50,L,Pitcher,70,50
+Max Castillo,60,50,0,60,R,Pitcher,60,80
+Max Fried,60,50,60,60,L,Pitcher,70,50
+Max Scherzer,70,50,60,60,R,Pitcher,60,50
+Merrill Kelly,60,0,60,60,R,Pitcher,60,50
+Michael Fulmer,60,60,0,60,R,Pitcher,60,60
+Michael King,60,60,0,60,R,Pitcher,60,60
+Michael Kopech,60,60,50,0,R,Pitcher,60,60
+Michael Lorenzen,60,60,0,60,R,Pitcher,60,60
+Michael Pineda,60,40,0,60,R,Pitcher,80,80
+Michael Rucker,60,60,60,60,R,Pitcher,50,50
+Michael Wacha,60,0,50,50,R,Pitcher,70,60
+Miguel Castro,60,60,0,60,R,Pitcher,80,50
+Mike Clevinger,60,60,0,40,R,Pitcher,70,60
+Mike Mayers,60,50,0,60,R,Pitcher,60,60
+Mike Minor,60,50,60,60,L,Pitcher,70,60
+Miles Mikolas,60,50,60,0,R,Pitcher,70,70
+Mitch Keller,60,70,60,60,R,Pitcher,60,60
+Mitch White,60,60,60,0,R,Pitcher,60,60
+Mychal Givens,60,50,0,50,R,Pitcher,50,70
+Nabil Crismatt,60,0,60,60,R,Pitcher,50,60
+Nathan Eovaldi,60,50,60,0,R,Pitcher,60,60
+Nestor Cortes,60,50,0,0,L,Pitcher,40,60
+Nick Lodolo,70,0,50,60,L,Pitcher,70,50
+Nick Martinez,60,0,60,60,R,Pitcher,50,50
+Nick Nelson,60,50,0,60,R,Pitcher,50,50
+Nick Pivetta,60,50,60,0,R,Pitcher,70,60
+Nick Sandlin,60,50,0,0,R,Pitcher,40,40
+Nick Wittgren,60,50,0,60,R,Pitcher,60,60
+Noah Syndergaard,60,50,40,60,R,Pitcher,70,70
+Noe Ramirez,60,0,50,60,R,Pitcher,60,50
+Oliver Ortega,60,0,50,0,R,Pitcher,50,30
+Pablo Lopez,60,0,60,60,R,Pitcher,70,60
+Packy Naughton,60,40,0,60,L,Pitcher,60,50
+Paolo Espino,60,50,60,0,R,Pitcher,40,60
+Patrick Corbin,60,40,0,50,L,Pitcher,70,60
+Patrick Sandoval,60,60,60,60,L,Pitcher,60,50
+Paul Blackburn,60,0,60,50,R,Pitcher,50,50
+Paul Sewald,60,50,0,0,R,Pitcher,60,60
+Penn Murfee,50,60,0,0,R,Pitcher,60,50
+Peter Strzelecki,60,60,0,60,R,Pitcher,60,50
+Phil Bickford,60,50,0,0,R,Pitcher,70,50
+Phil Maton,60,60,70,0,R,Pitcher,60,50
+Rafael Montero,60,50,0,60,R,Pitcher,50,50
+Raisel Iglesias,60,50,0,60,R,Pitcher,60,50
+Ranger Suarez,60,0,50,60,L,Pitcher,50,60
+Reid Detmers,60,50,60,50,L,Pitcher,60,60
+Reiver Sanmartin,60,50,0,60,L,Pitcher,60,30
+Reyes Moronta,60,50,0,60,R,Pitcher,40,80
+Reynaldo Lopez,60,50,60,0,R,Pitcher,50,60
+Rich Hill,60,50,60,0,L,Pitcher,70,60
+Richard Bleier,70,50,0,60,L,Pitcher,60,60
+Roansy Contreras,60,50,60,0,R,Pitcher,50,40
+Robbie Ray,60,40,0,0,L,Pitcher,60,60
+Robert Stephenson,60,60,0,0,R,Pitcher,60,50
+Robert Suarez,60,0,0,60,R,Pitcher,60,60
+Ron Marinaccio,70,50,0,60,R,Pitcher,60,50
+Rony Garcia,60,0,40,40,R,Pitcher,60,50
+Ross Detwiler,60,0,0,0,L,Pitcher,70,60
+Ross Stripling,60,50,60,50,R,Pitcher,50,60
+Rowan Wick,60,50,60,0,R,Pitcher,60,70
+Ryan Brasier,60,60,0,0,R,Pitcher,50,60
+Ryan Feltner,60,50,50,40,R,Pitcher,70,50
+Ryan Helsley,60,60,60,0,R,Pitcher,60,70
+Ryan Pepiot,60,50,0,60,R,Pitcher,60,60
+Ryan Pressly,60,60,80,0,R,Pitcher,60,50
+Ryan Tepera,60,50,0,60,R,Pitcher,50,50
+Ryan Thompson,60,50,0,0,R,Pitcher,70,60
+Ryan Yarbrough,50,0,60,60,L,Pitcher,70,50
+Ryne Stanek,60,60,0,0,R,Pitcher,70,60
+Sam Hentges,60,60,60,0,L,Pitcher,70,70
+Sam Long,60,0,50,40,L,Pitcher,50,40
+Sam Moll,50,60,0,0,L,Pitcher,30,50
+Sandy Alcantara,60,60,0,60,R,Pitcher,70,50
+Scott Barlow,50,60,60,0,R,Pitcher,60,60
+Scott Effross,60,50,0,60,R,Pitcher,60,50
+Sean Manaea,50,40,0,50,L,Pitcher,70,70
+Sean Newcomb,60,0,60,0,L,Pitcher,70,80
+Seranthony Dominguez,60,60,0,0,R,Pitcher,50,60
+Seth Lugo,60,50,70,0,R,Pitcher,70,60
+Seth Martinez,60,50,0,60,R,Pitcher,60,50
+Shane Bieber,60,50,60,0,R,Pitcher,60,50
+Shane McClanahan,70,60,60,60,L,Pitcher,50,50
+Shawn Armstrong,60,60,0,0,R,Pitcher,60,60
+Shohei Ohtani,60,60,60,0,R,Pitcher,70,60
+Sonny Gray,50,70,80,0,R,Pitcher,40,50
+Spencer Howard,60,0,60,0,R,Pitcher,60,60
+Spencer Strider,60,50,0,0,R,Pitcher,50,50
+Spenser Watkins,60,50,60,0,R,Pitcher,60,40
+Steve Cishek,60,50,0,0,R,Pitcher,70,60
+Steven Matz,60,0,60,60,L,Pitcher,60,50
+Steven Okert,60,50,0,0,L,Pitcher,60,50
+Steven Wilson,60,50,0,50,R,Pitcher,60,60
+T.J. McFarland,70,50,0,70,L,Pitcher,60,50
+Taijuan Walker,60,50,50,0,R,Pitcher,70,70
+Tanner Banks,50,50,50,50,L,Pitcher,50,60
+Tanner Houck,70,60,0,0,R,Pitcher,70,70
+Tanner Rainey,60,60,0,0,R,Pitcher,60,70
+Tanner Scott,60,60,0,0,L,Pitcher,50,70
+Tarik Skubal,60,50,50,60,L,Pitcher,60,70
+Taylor Clarke,60,50,0,60,R,Pitcher,70,60
+Taylor Hearn,60,50,0,40,L,Pitcher,70,70
+Taylor Rogers,60,50,0,0,L,Pitcher,60,50
+Tim Hill,60,50,0,0,L,Pitcher,70,50
+Tim Mayza,60,50,0,0,L,Pitcher,60,60
+Tommy Henry,60,40,40,60,L,Pitcher,60,50
+Tommy Nance,70,60,80,0,R,Pitcher,70,70
+Tony Gonsolin,60,50,50,0,R,Pitcher,60,50
+Trent Thornton,60,60,60,0,R,Pitcher,50,50
+Trevor Gott,60,0,60,0,R,Pitcher,40,40
+Trevor Kelley,50,0,60,60,R,Pitcher,60,60
+Trevor Megill,60,70,70,0,R,Pitcher,80,70
+Trevor Richards,60,0,40,60,R,Pitcher,60,50
+Trevor Rogers,60,40,0,60,L,Pitcher,70,60
+Trevor Stephan,60,60,0,0,R,Pitcher,70,60
+Trevor Williams,60,50,40,50,R,Pitcher,60,70
+Triston McKenzie,60,50,60,0,R,Pitcher,70,30
+Tucker Davidson,60,60,50,0,L,Pitcher,60,60
+Ty Blach,60,0,50,60,L,Pitcher,50,60
+Tyler Alexander,60,50,0,50,L,Pitcher,60,50
+Tyler Anderson,60,0,0,60,L,Pitcher,60,60
+Tyler Beede,60,50,60,60,R,Pitcher,60,60
+Tyler Danish,70,0,50,60,R,Pitcher,50,50
+Tyler Duffey,60,0,60,0,R,Pitcher,60,60
+Tyler Gilbert,60,0,60,0,L,Pitcher,60,60
+Tyler Mahle,60,50,0,0,R,Pitcher,60,60
+Tyler Matzek,60,60,0,0,L,Pitcher,60,70
+Tyler Rogers,60,50,0,0,R,Pitcher,60,40
+Tyler Wells,60,50,50,50,R,Pitcher,80,80
+Tylor Megill,60,60,0,60,R,Pitcher,80,70
+Victor Arano,60,50,0,0,R,Pitcher,60,60
+Vince Velasquez,60,50,50,50,R,Pitcher,60,60
+Vladimir Gutierrez,60,60,60,40,R,Pitcher,50,50
+Wade Miley,60,40,0,60,L,Pitcher,60,60
+Walker Buehler,60,60,60,50,R,Pitcher,60,40
+Wandy Peralta,60,50,0,60,L,Pitcher,50,60
+Wil Crowe,60,60,0,50,R,Pitcher,60,70
+Will Smith,60,40,50,0,L,Pitcher,40,50
+Will Smith,60,40,50,0,L,Pitcher,70,80
+Will Vest,60,60,0,60,R,Pitcher,50,40
+Wily Peralta,60,50,0,0,R,Pitcher,50,80
+Wyatt Mills,60,50,0,0,R,Pitcher,70,60
+Yimi Garcia,60,50,50,60,R,Pitcher,50,70
+Yohan Ramirez,60,60,0,0,R,Pitcher,70,60
+Yu Darvish,60,70,0,0,R,Pitcher,70,60
+Yunior Marte,60,50,0,0,R,Pitcher,60,40
+Yusei Kikuchi,70,50,0,40,L,Pitcher,50,50
+Zac Gallen,60,0,60,60,R,Pitcher,60,50
+Zach Davies,50,0,60,50,R,Pitcher,50,40
+Zach Eflin,60,0,50,50,R,Pitcher,70,60
+Zach Jackson,60,50,0,0,R,Pitcher,70,70
+Zach Logue,60,0,40,60,L,Pitcher,50,30
+Zach Plesac,60,40,40,40,R,Pitcher,60,60
+Zach Pop,70,60,0,0,R,Pitcher,70,60
+Zach Thompson,60,0,50,60,R,Pitcher,80,70
+Zack Greinke,50,50,60,60,R,Pitcher,60,50
+Zack Littell,60,50,0,0,R,Pitcher,70,60
+Zack Thompson,60,0,60,50,L,Pitcher,60,60
+Zack Wheeler,60,50,60,0,R,Pitcher,70,50

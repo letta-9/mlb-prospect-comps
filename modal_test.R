@@ -164,32 +164,51 @@ pitchers <- read.csv('pitchers_clean.csv') #Fome baseball savant export csv
 #Overall player comp table
 ##########################
 
-selected <- "Jordan Lawlar"
+selected <- "Eury Perez"
 selected_data <- prospects %>% filter(Name == selected)
 
-bat_ovl <- batters %>% filter(batters$Pos == selected_data$Pos, 
-                              batters$B == selected_data$B,
-                              batters$T == selected_data$T)
-bat_ovl[is.na(bat_ovl)] <- 0
+if (selected_data$Class == 'Position'){
 
-selected_data <- selected_data[c(1,11,12,13,14,15,16,7,8)]
-selected_vec <- as.numeric(selected_data[,-1])
+  bat_ovl <- batters %>% filter(batters$Pos == selected_data$Pos,
+                                batters$B == selected_data$B,
+                                batters$T == selected_data$T)
+  bat_ovl[is.na(bat_ovl)] <- 0
+  
+  selected_data <- selected_data[c(1,11,12,13,14,15,16,7,8)]
+  selected_vec <- as.numeric(selected_data[,-1])
+  
+  bat_ovl <- bat_ovl[c(1,4,5,6,7,8,9,12,13)]
+  bat_mat <- data.matrix(bat_ovl[,-1])
+  
+  ovl <- abs(sweep(bat_mat, 2, selected_vec))
+  ovl <- cbind(ovl, rowSums(ovl))
+  ovl <- cbind(bat_ovl[,1], ovl)
+  colnames(ovl)[10] <- 'CV'
+  ovl <- ovl %>% arrange(CV)
+  ovl <- ovl[1,]
+  print(ovl)
+}
 
-bat_ovl <- bat_ovl[c(1,4,5,6,7,8,9,12,13)]
-bat_mat <- data.matrix(bat_ovl[,-1])
 
-ovl <- abs(sweep(bat_mat, 2, selected_vec))
-ovl <- cbind(ovl, rowSums(ovl))
-ovl <- cbind(bat_ovl[,1], ovl)
-colnames(ovl)[10] <- 'CV'
-ovl <- ovl %>% arrange(CV)
-ovl <- ovl[1,]
-print(ovl)
+if (selected_data$Class == 'Pitcher'){
+  
+  pit_ovl <- pitchers %>% filter(pitchers$T == selected_data$T)
 
+  selected_data <- selected_data[c(1,17,18,19,20,7,8)]
+  selected_vec <- as.numeric(selected_data[,-1])
 
+  pit_ovl <- pit_ovl[c(1,2,3,4,5,8,9)]
+  pit_mat <- data.matrix(pit_ovl[,-1])
 
-
-
+  ovl <- abs(sweep(pit_mat, 2, selected_vec))
+  ovl <- cbind(ovl, rowSums(ovl))
+  ovl <- cbind(pit_ovl[,1], ovl)
+  colnames(ovl)[6] <- 'CV'
+  ovl <- data.frame(ovl)
+  ovl <- ovl %>% arrange(CV)
+  ovl <- ovl[1,]
+  print(ovl)
+}
 
 
 
