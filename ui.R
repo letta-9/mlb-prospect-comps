@@ -9,6 +9,7 @@ library(shinydashboard)
 #Import CSV files
 
 prospects <- read_csv("prospects_clean.csv")
+headshots <- read_csv("headshots.csv")
 
 #Clean prospects file
 
@@ -26,15 +27,40 @@ shinyUI(
               actionButton("compare", "Compare"),
               DTOutput("display_prospects"),
               bsModal("modal", "Big League Comps", "compare", size = "large",
-                      dataTableOutput("tbl"),
+                      fluidRow(
+                        column(4),
+                        column(3, htmlOutput("pros_mug")),
+                        column(3, htmlOutput("mlb_mug")),
+                        column(2)
+                      ),
                       br(),
-                      uiOutput("card"),
+                      fluidRow(
+                        column(3),
+                        column(3, verbatimTextOutput('prospect')),
+                        column(3, verbatimTextOutput('comp')),
+                        column(3)
+                      ),
                       br(),
-                      uiOutput("highlight"))
-
-        )
-
-)
+                      fluidRow(
+                        column(4),
+                        column(4,tableOutput("tbl")),
+                        column(4)
+                      ),
+                      br(),
+                      fluidRow(
+                        column(5),
+                        column(4,uiOutput("card")),
+                        column(3)
+                      ),                      
+                      br(),
+                      fluidRow(
+                        column(5),
+                        column(4,uiOutput("highlight")),
+                        column(3)
+                      )
+                      )
+          )
+      )
   
             
         
