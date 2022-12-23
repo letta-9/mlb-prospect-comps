@@ -6,7 +6,8 @@ library(readr)
 
 #Last Updated 10/10/22
 prospects <- read_csv('prospects_raw.csv') #From fangraphs THE BOARD - Summary, Scoutin Position, Scouting Pitching. Remove space in Top 100 Column
-pros_cat <- read.csv('prospect_catchers_raw.csv') #From fangraphs THE BOARD - Physical Attributes
+pros_arm <- read.csv('prospect_arm_raw.csv') #From fangraphs THE BOARD - Physical Attributes
+
 
 #######################
 # CLEAN PROSPECT DATA #
@@ -14,7 +15,6 @@ pros_cat <- read.csv('prospect_catchers_raw.csv') #From fangraphs THE BOARD - Ph
 
 prospects$Age <- floor(prospects$Age)
 
-#prospects$W <- plyr::round_any(prospects$W, 10, round)
 prospects$Class <- ifelse(prospects$Pos == 'SP' | prospects$Pos == 'MIRP'| prospects$Pos == 'SIRP', 'Pitcher', 'Position')
 
 tool_list <- c('Hit','Game','Raw','Spd','Fld','FB','SL','CB','CH','CMD')
@@ -22,6 +22,7 @@ for (a in tool_list){
   prospects <- prospects %>% separate(a, c(paste('c',a),a), " / ")
 }
 
+prospects <- merge(prospects, pros_arm, by='Name')
 
 prospects$Hit <-as.numeric(prospects$Hit)
 prospects$Hit <- plyr::round_any(prospects$Hit, 10, f = ceiling)
@@ -33,6 +34,8 @@ prospects$Spd <-as.numeric(prospects$Spd)
 prospects$Spd <- plyr::round_any(prospects$Spd, 10, f = ceiling)
 prospects$Fld <-as.numeric(prospects$Fld)
 prospects$Fld <- plyr::round_any(prospects$Fld, 10, f = ceiling)
+prospects$Arm <-as.numeric(prospects$Arm)
+prospects$Arm <- plyr::round_any(prospects$Arm, 10, f = ceiling)
 prospects$FB <-as.numeric(prospects$FB)
 prospects$FB <- plyr::round_any(prospects$FB, 10, f = ceiling)
 prospects$SL <-as.numeric(prospects$SL)
@@ -42,7 +45,7 @@ prospects$CB <- plyr::round_any(prospects$CB, 10, f = ceiling)
 prospects$CH <-as.numeric(prospects$CH)
 prospects$CH <- plyr::round_any(prospects$CH, 10, f = ceiling)
 
-prospects <- merge(prospects, pros_cat, by='Name')
+
 prospects$Class[prospects$Pos.x == 'C'] <- 'Catcher'
 
 prospects <- prospects %>% select(c(1,2,3,39,4,5,6,7,8,9,11,15,17,19,21,45,24,26,28,30,32))
@@ -98,6 +101,30 @@ prospects <- prospects %>%
       Pos == 'DH' ~ 'DH',
       Pos == 'SP' ~ 'SP',
       Pos == 'MIRP' | Pos == 'SIRP' ~ 'RP',
+    )
+  )
+
+#####################
+#Add Pos Archetype column
+#####################
+
+prospects$Arch <- NA
+
+prospects <- prospects %>% 
+  mutate(
+    Arch = case_when(
+      Class == 'Pitcher' & FB >= 70 & CMD >= 40  ~ 'VELO',
+      Class == 'Pitcher' & FB < 70 & CMD >= 60  ~ 'CTRL',
+      Class == 'Pitcher' & FB < 70 & (SL >= 70 | CB >= 70 | CH >= 70)  ~ 'BREAK',
+      Class == 'Pitcher' & FB < 70 & CMD < 40 ~ 'B-WLD',
+      Class == 'Pitcher' & FB >= 70 & CMD < 40 ~ 'V-WLD',
+      Class == 'Pitcher' & is.na(Arch) ~ 'BLNC',
+      Bio.Class == 'Position' & Game >= 60 & (Game - Hit) >= 20  ~ 'PWR',
+      Bio.Class == 'Position' & (Hit - Game) >= 20  ~ 'CON',
+      Bio.Class == 'Position' & Fld > Hit & Fld > Game & Fld > Raw & Hit < 50 & Game < 50 ~ 'FLD',
+      Bio.Class == 'Position' & Spd >= 70 & Hit < 50 & Game < 50 ~ 'SPD',
+      Bio.Class == 'Position' & Hit >= 60 & Game >= 60 & Fld >= 60 & Arm >= 60 & Fld >= 60 ~ '5-T',
+      Bio.Class == 'Position' & is.na(Arch) ~ 'BLNC'
     )
   )
 
