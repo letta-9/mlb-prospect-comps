@@ -44,7 +44,8 @@ prospects$CB <-as.numeric(prospects$CB)
 prospects$CB <- plyr::round_any(prospects$CB, 10, f = ceiling)
 prospects$CH <-as.numeric(prospects$CH)
 prospects$CH <- plyr::round_any(prospects$CH, 10, f = ceiling)
-
+prospects$CMD <-as.numeric(prospects$CMD)
+prospects$CMD <- plyr::round_any(prospects$CMD, 10, f = ceiling)
 
 prospects$Class[prospects$Pos.x == 'C'] <- 'Catcher'
 
