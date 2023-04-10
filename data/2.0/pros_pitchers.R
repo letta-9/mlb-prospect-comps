@@ -10,12 +10,16 @@ pros_pitchers <- read.csv('pros_pitchers.csv')
 # Clean
 pros_pitchers <- pros_pitchers %>% select(Name, FB.Type, FB, SL, CB, CH, CMD)
 
-for (i in 3:7){
-  pros_pitchers <- pros_pitchers %>% separate(i, c(paste('c',i),i), " / ")
+tool_list <- c('FB','SL','CB','CH','CMD')
+for (i in tool_list){
+  pros_pitchers <- pros_pitchers %>% separate(i, c(paste('G',i),i), " / ")
 }
 
-for (i in 2:8){
-  pros_batters[,i] <- plyr::round_any(pros_batters[,i], 10, f = ceiling)
+pros_pitchers <- pros_pitchers %>% select(Name, FB.Type, FB, SL, CB, CH, CMD)
+
+pros_pitchers <- pros_pitchers %>% mutate_at(c('FB','SL','CB','CH','CMD'), as.numeric)
+for (i in 3:7){
+  pros_pitchers[,i] <- plyr::round_any(pros_pitchers[,i], 10, f = ceiling)
 }
 
 
