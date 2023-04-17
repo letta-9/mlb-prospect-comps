@@ -34,3 +34,5 @@ for (i in 7:8){
 
 names(mlb_bios) <- c('Name', 'Bio.Class', 'POS', 'B', 'T', 'Height', 'Inches', 'Weight', 'H', 'W')
 mlb_bios <- mlb_bios %>% select('Name', 'Bio.Class', 'POS', 'B', 'T','H', 'W')
+
+write_csv(mlb_bios, 'csv/mlb_bios_clean.csv')

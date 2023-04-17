@@ -1,8 +1,8 @@
 library(baseballr)
 library(dplyr)
 library(tidyr)
+library(readr)
 # library(glue)
-# library(readr)
 # library(plyr)
 # library(stringi)
 # library(data.table)
@@ -44,7 +44,7 @@ mlb_raw$Name <- paste(mlb_raw$first_name, mlb_raw$last_name)
 
 mlb_disc_ctrl <- fg_batter_leaders(2021, 2022, league = 'all', qual = 340, ind = 0, exc_p = TRUE)
 
-mlb_cat <- statcast_leaderboards(leaderboard = "pop_time", year = 2022, min_field = "q")
+mlb_cat <- statcast_leaderboards(leaderboard = "pop_time", year = 2022, min_field = "50")
 colnames(mlb_cat)[2] <- 'Name'
 
 mlb_spd <- statcast_leaderboards(leaderboard = "sprint_speed", year = 2022)
@@ -188,6 +188,8 @@ mlb_batters <- mlb_batters %>% mutate(cFLD = coalesce(cFLD, FLD))
 
 mlb_batters <- mlb_batters[c(1,11,17,12,13,16,18,15)]
 mlb_batters <- mlb_batters %>% dplyr::rename(FLD = 7)
+
+write_csv(mlb_batters, 'csv/mlb_batters_clean.csv')
 
 ###############
 # Add Archetype

@@ -5,7 +5,7 @@ library(tidyr)
 library(readr)
 
 #Last Updated 02/22/23
-pros_batters <- read_csv('pros_batters.csv') # Fangraphs THE BOARD: Scouting Only, Scouting - Position
+pros_batters <- read_csv('csv/pros_batters_raw.csv') # Fangraphs THE BOARD: Scouting Only, Scouting - Position
 pros_batters <- pros_batters %>% arrange(`Top 100`)
 
 tool_list <- c('Hit','Game','Raw','Spd','Fld')
@@ -18,9 +18,20 @@ names(pros_batters) <- c('Name', 'HIT', 'PWR', 'RAW', 'BAT_CTRL', 'DISC', 'FLD',
 
 pros_batters <- pros_batters %>% mutate_at(c('HIT', 'PWR', 'RAW', 'BAT_CTRL', 'DISC', 'FLD', 'SPD'), as.numeric)
 
-for (i in 2:8){
-  pros_batters[,i] <- plyr::round_any(pros_batters[,i], 10, f = ceiling)
-}
+# for (i in 2:8){
+#   pros_batters[,i] <- plyr::round_any(pros_batters[,i], 10, f = ceiling)
+# }
+
+pros_batters$HIT <- plyr::round_any(pros_batters$HIT, 10, f = ceiling)
+pros_batters$PWR <- plyr::round_any(pros_batters$PWR, 10, f = ceiling)
+pros_batters$RAW <- plyr::round_any(pros_batters$RAW, 10, f = ceiling)
+pros_batters$BAT_CTRL <- plyr::round_any(pros_batters$BAT_CTRL, 10, f = ceiling)
+pros_batters$DISC <- plyr::round_any(pros_batters$DISC, 10, f = ceiling)
+pros_batters$FLD <- plyr::round_any(pros_batters$FLD, 10, f = ceiling)
+pros_batters$SPD <- plyr::round_any(pros_batters$SPD, 10, f = ceiling)
+
+
+write_csv(pros_batters, 'csv/pros_batters_clean.csv')
 
 
 # #####################

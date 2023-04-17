@@ -4,7 +4,7 @@ library(plyr)
 library(tidyr)
 library(readr)
 
-pros_bios <- read_csv('pros_bios.csv') # From Fangraphs THE BOARD (Scouting Only) - Summary
+pros_bios <- read_csv('csv/pros_bios_raw.csv') # From Fangraphs THE BOARD (Scouting Only) - Summary
 
 pros_bios$Bio.Class <- NA
 
@@ -44,3 +44,5 @@ for (i in 6:7){
 
 names(pros_bios) <- c('Name', 'Bio.Class', 'POS', 'B', 'T', 'Height', 'Weight', 'H', 'W')
 pros_bios <- pros_bios %>% select('Name', 'Bio.Class', 'POS', 'B', 'T', 'H', 'W')
+
+write_csv(pros_bios, 'csv/pros_bios_clean.csv')

@@ -5,7 +5,7 @@ library(tidyr)
 library(readr)
 
 # Imports
-pros_pitchers <- read.csv('pros_pitchers.csv')
+pros_pitchers <- read.csv('csv/pros_pitchers_raw.csv')
 
 # Clean
 pros_pitchers <- pros_pitchers %>% select(Name, FB.Type, FB, SL, CB, CH, CMD)
@@ -38,3 +38,5 @@ pros_pitchers$Has.CB <- !is.na(pros_pitchers$CB)
 pros_pitchers$Has.CH <- !is.na(pros_pitchers$CH)
 
 pros_pitchers <- pros_pitchers %>% mutate_all(as.character)
+
+write_csv(pros_pitchers, 'csv/pros_pitchers_clean.csv')

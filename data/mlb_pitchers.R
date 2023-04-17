@@ -63,3 +63,4 @@ mlb_pitchers$Has.SL <- !is.na(mlb_pitchers$SL)
 mlb_pitchers$Has.CB <- !is.na(mlb_pitchers$CB)
 mlb_pitchers$Has.CH <- !is.na(mlb_pitchers$CH)
 
+write_csv(mlb_pitchers, 'csv/mlb_pitchers_clean.csv')
