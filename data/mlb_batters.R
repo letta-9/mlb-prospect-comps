@@ -13,6 +13,14 @@ library(readr)
 # MLB BATTERS #
 ################
 
+# HIT : AVG
+# PWR : HR
+# RAW : MAX EV
+# FLD : OAA, POP TIME
+# SPD : SPRINT SPEED
+# BAT_CTRL: CONTACT PERCENTAGE
+# DISC : O SWING PERCENTAGE
+
 
 mlb_hit_pwr <- data.frame()
 mlb_fld <- data.frame()
@@ -189,23 +197,29 @@ mlb_batters <- mlb_batters %>% mutate(cFLD = coalesce(cFLD, FLD))
 mlb_batters <- mlb_batters[c(1,11,17,12,13,16,18,15)]
 mlb_batters <- mlb_batters %>% dplyr::rename(FLD = 7)
 
-write_csv(mlb_batters, 'csv/mlb_batters_clean.csv')
 
-###############
-# Add Archetype
-###############
+for (i in 2:8){
+  mlb_batters[,i] <- as.numeric(as.character(mlb_batters[,i]))
+}
 
-# mlb_batters$Arch <- NA
-# mlb_batters <- mlb_batters %>% mutate_at(c('HIT','PWR','RAW','DISC','BAT_CTRL','FLD','SPD'), as.numeric)
-# 
-# mlb_batters <- mlb_batters %>%
-#   mutate(
-#     Arch = case_when(
-#       PWR >= 60 & HIT < 50  ~ 'PWR',
-#       HIT >= 60 & PWR < 50  ~ 'CON',
-#       FLD > HIT & FLD > PWR & FLD > RAW & HIT < 50 & PWR < 50 ~ 'FLD',
-#       SPD >= 70 & HIT < 50 & PWR < 50 ~ 'SPD',
-#       HIT >= 60 & PWR >= 60 & FLD >= 60 & SPD >= 60 ~ '5-T',
-#       is.na(Arch) ~ 'BLNC'
-#     )
-#   )
+mlb_batters$Arch <- NA
+
+mlb_batters <- mlb_batters %>%
+  mutate(
+    Arch = case_when(
+      PWR >= 60 & (PWR - HIT) >= 20  ~ 'PWR',
+      (HIT - PWR) >= 20  ~ 'CON',
+      FLD > HIT & FLD > PWR & FLD > RAW & HIT < 50 & PWR < 50 ~ 'FLD',
+      SPD >= 70 & HIT <= 50 & PWR <= 50 ~ 'SPD',
+      HIT >= 70 & PWR >= 70 & FLD >= 60 & SPD >= 60 ~ '5-T',
+      is.na(Arch) ~ 'BLNC'
+    )
+  )
+
+mlb_batters <- mlb_batters %>% relocate(Arch, .before = HIT)
+
+for (i in 3:9){
+  mlb_batters[,i] <- as.character(mlb_batters[,i])
+}
+
+write_csv(mlb_batters, 'app/mlb_batters_clean.csv')
