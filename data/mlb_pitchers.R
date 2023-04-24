@@ -63,25 +63,29 @@ mlb_pitchers$Has.SL <- !is.na(mlb_pitchers$SL)
 mlb_pitchers$Has.CB <- !is.na(mlb_pitchers$CB)
 mlb_pitchers$Has.CH <- !is.na(mlb_pitchers$CH)
 
-# for (i in 3:7){
-#   mlb_pitchers[,i] <- as.numeric(as.character(mlb_pitchers[,i]))
-# }
-# 
-# 
-# mlb_pitchers$Arch <- NA
-# 
-# mlb_pitchers <- mlb_pitchers %>%
-#   mutate(
-#     Arch = case_when(
-#       FB >= 70 & CMD >= 40  ~ 'VELO',
-#       FB < 70 & CMD >= 60  ~ 'CTRL',
-#       FB < 70 & (SL >= 70 | CB >= 70 | CH >= 70)  ~ 'BREAK',
-#       FB < 70 & CMD < 40 ~ 'B-WLD',
-#       FB >= 70 & CMD < 40 ~ 'V-WLD',
-#       is.na(Arch) ~ 'BLNC',
-#     )
-#   )
+mlb_pitchers$FB <- as.numeric(as.character(mlb_pitchers$FB))
+mlb_pitchers$SL <- as.numeric(as.character(mlb_pitchers$SL))
+mlb_pitchers$CB <- as.numeric(as.character(mlb_pitchers$CB))
+mlb_pitchers$CH <- as.numeric(as.character(mlb_pitchers$CH))
+mlb_pitchers$CMD <- as.numeric(as.character(mlb_pitchers$CMD))
+
+
+mlb_pitchers$Arch <- NA
+
+mlb_pitchers <- mlb_pitchers %>%
+  mutate(
+    Arch = case_when(
+      FB >= 70 & CMD >= 40  ~ 'VELO',
+      FB < 70 & CMD >= 60  ~ 'CTRL',
+      FB < 70 & (SL >= 70 | CB >= 70 | CH >= 70)  ~ 'BREAK',
+      FB < 70 & CMD < 40 ~ 'B-WLD',
+      FB >= 70 & CMD < 40 ~ 'V-WLD',
+      is.na(Arch) ~ 'BLNC',
+    )
+  )
+
+mlb_pitchers <- mlb_pitchers %>% relocate(Arch, .before = FB.Type)
 
 
 
-# write_csv(mlb_pitchers, 'app/mlb_pitchers_clean.csv')
+write_csv(mlb_pitchers, 'app/mlb_pitchers_clean.csv')
