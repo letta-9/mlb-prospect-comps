@@ -54,7 +54,9 @@ pros_bios <- pros_bios %>%
       Pos == '3B' | Pos == '1B' ~ 'CI',
       Pos == 'C' ~ 'C',
       Pos == 'DH' ~ 'DH',
-      Pos == 'P' ~ 'P'
+      Pos == 'P' ~ 'P',
+      Pos == 'SIRP' ~ 'P',
+      Pos == 'MIRP' ~ 'P'
     )
   )
 
