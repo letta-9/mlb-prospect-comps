@@ -41,8 +41,8 @@ pros_batters <- pros_batters %>%
 
 pros_batters <- pros_batters %>% relocate(Arch, .before = HIT)
 
-pros_batters <- lapply(pros_batters, as.character)
-pros_batters <- data.frame(pros_batters)
+# pros_batters <- lapply(pros_batters, as.character)
+# pros_batters <- data.frame(pros_batters)
 
 
 write_csv(pros_batters, 'app/pros_batters_clean.csv')
