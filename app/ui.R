@@ -8,16 +8,16 @@ library(shinydashboard)
 
 #Import CSV files
 
-prospects <- read_csv("prospects_clean.csv")
-headshots <- read_csv("headshots.csv")
+#display_prospects <- read_csv('pros_display.csv')
+#headshots <- read_csv("mlb_headshots.csv")
 
-#Clean prospects file
-
-prospects$Age <- floor(prospects$Age)
-prospects$W <- plyr::round_any(prospects$W, 5, f=ceiling)
-prospects$H <- gsub(" ","", prospects$H)
-prospects$Class <- ifelse(prospects$Pos == 'SP' | prospects$Pos == 'MIRP'| prospects$Pos == 'SIRP', 'Pit', 'Pos')
-display_prospects <- prospects %>% select(Top100, Name, Pos, Org, Age, H, W, B, T)
+# #Clean prospects file
+# 
+# prospects$Age <- floor(prospects$Age)
+# prospects$W <- plyr::round_any(prospects$W, 5, f=ceiling)
+# prospects$H <- gsub(" ","", prospects$H)
+# prospects$Class <- ifelse(prospects$Pos == 'SP' | prospects$Pos == 'MIRP'| prospects$Pos == 'SIRP', 'Pit', 'Pos')
+# display_prospects <- prospects %>% select(Top100, Name, Pos, Org, Age, H, W, B, T)
 
 shinyUI(
 
@@ -26,7 +26,7 @@ shinyUI(
     titlePanel("MLB PROSPECT COMPS"),
               actionButton("compare", "Compare"),
               DTOutput("display_prospects"),
-              bsModal("modal", "Big League Comps", "compare", size = "large",
+              bsModal("modal", "Big League Comps", trigger = 'compare', size = "large",
                       fluidRow(
                         column(4),
                         column(3, htmlOutput("pros_mug")),
@@ -51,14 +51,14 @@ shinyUI(
                         column(5),
                         column(4,uiOutput("card")),
                         column(3)
-                      ),                      
+                      ),
                       br(),
                       fluidRow(
                         column(5),
                         column(4,uiOutput("highlight")),
                         column(3)
                       )
-                      )
+              )
           )
       )
   
