@@ -6,26 +6,23 @@ library(plyr)
 library(shinyBS)
 library(shinydashboard)
 
-#Import CSV files
-
-#display_prospects <- read_csv('pros_display.csv')
-#headshots <- read_csv("mlb_headshots.csv")
-
-# #Clean prospects file
-# 
-# prospects$Age <- floor(prospects$Age)
-# prospects$W <- plyr::round_any(prospects$W, 5, f=ceiling)
-# prospects$H <- gsub(" ","", prospects$H)
-# prospects$Class <- ifelse(prospects$Pos == 'SP' | prospects$Pos == 'MIRP'| prospects$Pos == 'SIRP', 'Pit', 'Pos')
-# display_prospects <- prospects %>% select(Top100, Name, Pos, Org, Age, H, W, B, T)
 
 shinyUI(
 
   fluidPage(
     
     titlePanel("MLB PROSPECT COMPS"),
-              actionButton("compare", "Compare"),
-              DTOutput("display_prospects"),
+              column(12,
+                     br(),
+                     h4('Select a Prospect from Table Below and Click to Produce an MLB Comparison'),
+                     actionButton("compare", "Submit", style="color: #fff; background-color: #337ab7; border-color: #2e6da4"),
+                     br(),
+                     br(),
+                     br(),
+                     DTOutput("display_prospects")
+              ),
+              
+
               bsModal("modal", "Big League Comps", trigger = 'compare', size = "large",
                       fluidRow(
                         column(4),
@@ -58,7 +55,8 @@ shinyUI(
                         column(4,uiOutput("highlight")),
                         column(3)
                       )
-              )
+              ),
+              h6("*Based on Frangraph's 2023 Preseason Top 100*")
           )
       )
   

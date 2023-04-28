@@ -50,7 +50,7 @@ shinyServer(function(input, output){
   
   output$display_prospects <- renderDT(
     display_prospects,
-    options = list(pageLength = 1500),
+    options = list(pageLength = 20),
     rownames = FALSE,
     selection = "single",
   )
