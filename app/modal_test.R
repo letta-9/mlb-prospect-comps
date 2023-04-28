@@ -97,17 +97,19 @@ colnames(comp_chart)[1] <- 'Grade'
 
 chart_data <- rbind(pros_chart, comp_chart)
 
-if (comp_tools$Pos.Class == 'Position'){
+if (pros$Pos.Class[pros$Name == selected] == 'Position'){
   
   ggplot(chart_data, aes(x=factor(Tool, levels=c('H', 'W', 'HIT', 'PWR', 'RAW', 'BAT_CTRL', 'DISC', 'FLD', 'SPD')), y=Grade, group=Player, fill=Player))+
            geom_bar(position = 'dodge', stat = 'identity')+
            scale_y_continuous(expand=c(0,0))+
+           xlab('Tools')+
            theme_classic()
        
 } else {
   ggplot(chart_data, aes(x=factor(Tool, levels=c('H', 'W', 'FB', 'SL', 'CB', 'CH', 'CMD')), y=Grade, group=Player, fill=Player))+
     geom_bar(position = 'dodge', stat = 'identity')+
     scale_y_continuous(expand=c(0,0))+
+    xlab('Tools')+
     theme_classic()
   
 }
