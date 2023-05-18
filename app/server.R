@@ -87,6 +87,11 @@ shinyServer(function(input, output){
                                      Pos.Group == z$Pos.Group &
                                      Arch == z$Arch &
                                      B == z$B)
+      if (nrow(comp_group) == 0){
+        comp_group <- mlb %>% filter(Pos.Class == z$Pos.Class &
+                                       Pos.Group == z$Pos.Group &
+                                       Arch == z$Arch)
+      }
       
       rownames(comp_group) <- comp_group$Name
       comp_group <- comp_group %>% select(H, W, HIT, PWR, RAW, BAT_CTRL, DISC, FLD, SPD)
@@ -94,6 +99,11 @@ shinyServer(function(input, output){
       comp_group <- mlb %>% filter(Arch == z$Arch &
                                      T == z$B &
                                      FB.Type == z$FB.Type)
+      
+      if (nrow(comp_group) == 0){
+        comp_group <- mlb %>% filter(Arch == z$Arch &
+                                       FB.Type == z$FB.Type)
+      }
       
       rownames(comp_group) <- comp_group$Name
       comp_group <- comp_group %>% select(H, W, FB, SL, CB, CH, CMD)

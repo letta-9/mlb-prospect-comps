@@ -19,8 +19,8 @@ mlb$Name <- paste(mlb$Name, mlb$Team, sep = ' ')
 pros <- merge(pros_batters, pros_pitchers, by=c('Name','Arch'), all = TRUE)
 pros <- merge(pros_bios, pros, by='Name')
 
-selected <- "Logan O'Hoppe"
-#selected <- "Jack Leiter"
+selected <- "Alex Ramirez"
+#selected <- "Andrew Painter"
 
 selected_data <- pros %>% filter(Name == selected)
 
@@ -29,6 +29,11 @@ if (selected_data$Pos.Class == 'Position'){
                               Pos.Group == selected_data$Pos.Group &
                               Arch == selected_data$Arch &
                               B == selected_data$B)
+  if (nrow(comp_group) == 0){
+    comp_group <- mlb %>% filter(Pos.Class == selected_data$Pos.Class &
+                                   Pos.Group == selected_data$Pos.Group &
+                                   Arch == selected_data$Arch)
+  }
   
   rownames(comp_group) <- comp_group$Name
   comp_group <- comp_group %>% select(H, W, HIT, PWR, RAW, BAT_CTRL, DISC, FLD, SPD)
@@ -38,8 +43,14 @@ if (selected_data$Pos.Class == 'Position'){
   
 } else {
   comp_group <- mlb %>% filter(Arch == selected_data$Arch &
-                                 T == selected_data$B &
-                                 FB.Type == selected_data$FB.Type)
+                                 FB.Type == selected_data$FB.Type &
+                                 T == selected_data$T
+                                 )
+  if (nrow(comp_group) == 0){
+    comp_group <- mlb %>% filter(Arch == selected_data$Arch &
+                                   FB.Type == selected_data$FB.Type)
+  }
+  
   
   rownames(comp_group) <- comp_group$Name
   comp_group <- comp_group %>% select(H, W, FB, SL, CB, CH, CMD)
@@ -59,7 +70,10 @@ for (i in 1:nrow(comp_group)){
 }
 
 comp_group$Ovl <- rowSums(comp_group)
+comp_group$Name <- rownames(comp_group)
 comp_group <- comp_group %>% arrange(Ovl)
+rownames(comp_group) <- comp_group$Name
+comp_group <- comp_group %>% select(-last_col())
 comp_group <- comp_group %>% filter(comp_group$Ovl == comp_group[1,ncol(comp_group)])
 
 
@@ -77,7 +91,7 @@ if (comp_tools$Pos.Class == 'Position'){
   comp_tools <- comp_tools %>% select(H, W, HIT, PWR, RAW, BAT_CTRL, DISC, FLD, SPD)
 } else {
   rownames(comp_tools) <- comp_tools$Name
-  comp_tools <- comp_tools %>% select(Name, H, W, FB, SL, CB, CH, CMD)
+  comp_tools <- comp_tools %>% select(H, W, FB, SL, CB, CH, CMD)
 }
 
 chart_data <- rbind(selected_data, comp_tools)
