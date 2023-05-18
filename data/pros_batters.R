@@ -25,6 +25,7 @@ pros_batters$DISC <- plyr::round_any(pros_batters$DISC, 10, f = ceiling)
 pros_batters$FLD <- plyr::round_any(pros_batters$FLD, 10, f = ceiling)
 pros_batters$SPD <- plyr::round_any(pros_batters$SPD, 10, f = ceiling)
 
+pros_batters[is.na(pros_batters)] <- 50
 pros_batters$Arch <- NA
 
 pros_batters <- pros_batters %>%
