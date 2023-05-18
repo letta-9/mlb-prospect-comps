@@ -60,7 +60,6 @@ shinyServer(function(input, output){
     x = isolate(display_prospects)
     x = x[input$display_prospects_rows_selected,]
     x = x$Name
-    print(x)
   })
   
   
@@ -105,26 +104,32 @@ shinyServer(function(input, output){
       comp_group[i,] <- abs(comp_group[i,] - selected_data())
     }
     
+    print(comp_group)
+    
     comp_group$Ovl <- rowSums(comp_group)
     comp_group$Name <- rownames(comp_group)
     comp_group <- comp_group %>% arrange(Ovl)
     rownames(comp_group) <- comp_group$Name
-    comp_group <- comp_group %>% select(H, W, HIT, PWR, RAW, BAT_CTRL, DISC, FLD, SPD, Ovl)
+    comp_group <- comp_group %>% select(-last_col())
+    #print(comp_group)
     comp_group <- comp_group %>% filter(comp_group$Ovl == comp_group[1,ncol(comp_group)])
     
     
     comp_data <- comp_group[sample(1:nrow(comp_group),1),]
     mlb_comp <- rownames(comp_data)
     #comp <- gsub("\\s*\\([^\\)]+\\)","", comp)
-    #print(comp)
     #perc_match <- ((500 - comp_data$Ovl) / 500) * 100
     print(mlb_comp)
+  })
+  
+  mlb_comp_display = reactive({
+    mlb_comp_display <- gsub("\\s*\\([^\\)]+\\)","", mlb_comp())
   })
   
   
   
   mlb_url = reactive({
-    src = mlb_mugs['url'][mlb_mugs['name'] == mlb_comp()]
+    src = mlb_mugs['url'][mlb_mugs['name'] == mlb_comp_display()]
   })
   
   
@@ -141,13 +146,12 @@ shinyServer(function(input, output){
       comp_tools <- comp_tools %>% select(H, W, HIT, PWR, RAW, BAT_CTRL, DISC, FLD, SPD)
     } else {
       rownames(comp_tools) <- comp_tools$Name
-      comp_tools <- comp_tools %>% select(Name, H, W, FB, SL, CB, CH, CMD)
+      comp_tools <- comp_tools %>% select(H, W, FB, SL, CB, CH, CMD)
     }
     chart_data <- rbind(selected_data(), comp_tools) 
     
     chart_data <- t(chart_data)
     chart_data <- data.frame(chart_data) #############################
-    print(chart_data)
     colnames(chart_data) <- c(selected_player(), mlb_comp())
     chart_data$Tool <- rownames(chart_data)
     rownames(chart_data) <- NULL
@@ -177,7 +181,7 @@ shinyServer(function(input, output){
   output$prospect <- renderText(selected_player())
   
   
-  output$comp <- renderText(mlb_comp())
+  output$comp <- renderText(mlb_comp_display())
 
   
   output$compPlot = renderPlot({

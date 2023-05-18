@@ -26,9 +26,9 @@ shinyUI(
     bsModal("modal", "Big League Comps", trigger = 'compare', size = "large",
             fluidRow(
               column(4),
-              column(3, htmlOutput("pros_mug")),
-              column(3, htmlOutput("mlb_mug")),
-              column(2)
+              column(2, htmlOutput("pros_mug")),
+              column(2, htmlOutput("mlb_mug")),
+              column(4)
             ),
             br(),
             fluidRow(
@@ -39,9 +39,7 @@ shinyUI(
             ),
             br(),
             fluidRow(
-              column(4),
-              column(4, plotOutput("compPlot")),
-              column(4)
+              column(12, plotOutput("compPlot"))
             ),
             br(),
             fluidRow(
