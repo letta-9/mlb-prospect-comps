@@ -2,14 +2,17 @@ library(dplyr)
 library(plyr)
 library(tidyr)
 library(readr)
+library(stringi)
 
 #Last Updated 02/22/23
 pros_batters <- read_csv('raw csv/pros_batters_raw.csv') # Fangraphs THE BOARD: Scouting Only, Scouting - Position
 pros_batters <- pros_batters %>% arrange(`Top 100`)
+pros_batters$Name <- iconv(pros_batters$Name, to = "ASCII//TRANSLIT")
+
 
 tool_list <- c('Hit','Game','Raw','Spd','Fld')
 for (a in tool_list){
-  pros_batters <- pros_batters %>% separate(a, c(paste('c',a),a), " / ")
+  pros_batters <- pros_batters %>% separate(a, c(paste('c',a),a), "/")
 }
 
 pros_batters <- pros_batters %>% select(Name, Hit, Game, Raw, `Bat Ctrl`, `Pitch Sel`, Fld, Spd)

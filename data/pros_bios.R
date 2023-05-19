@@ -4,6 +4,7 @@ library(tidyr)
 library(readr)
 
 pros_bios <- read_csv('raw csv/pros_bios_raw.csv') # From Fangraphs THE BOARD (Scouting Only) - Summary
+pros_bios$Name <- iconv(pros_bios$Name, to = "ASCII//TRANSLIT")
 
 pros_bios$Pos.Class <- NA
 

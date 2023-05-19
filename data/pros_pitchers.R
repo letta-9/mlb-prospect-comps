@@ -6,13 +6,14 @@ library(readr)
 
 # Imports
 pros_pitchers <- read.csv('raw csv/pros_pitchers_raw.csv')
+pros_pitchers$Name <- iconv(pros_pitchers$Name, to = "ASCII//TRANSLIT")
 
 # Clean
 pros_pitchers <- pros_pitchers %>% select(Name, FB.Type, FB, SL, CB, CH, CMD)
 
 tool_list <- c('FB','SL','CB','CH','CMD')
 for (i in tool_list){
-  pros_pitchers <- pros_pitchers %>% separate(i, c(paste('G',i),i), " / ")
+  pros_pitchers <- pros_pitchers %>% separate(i, c(paste('G',i),i), "/")
 }
 
 pros_pitchers <- pros_pitchers %>% select(Name, FB.Type, FB, SL, CB, CH, CMD)
