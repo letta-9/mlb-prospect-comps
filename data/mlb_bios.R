@@ -9,6 +9,9 @@ library(readr)
 
 mlb_bios <- mlb_sports_players(sport_id = 1, season = 2022) #BASEBALL R
 
+mlb_names <- mlb_bios %>% select(full_name, player_id)
+write.csv(mlb_names, 'app/scrape/mlb_names.csv')
+
 mlb_bios$primary_position_type <- ifelse(mlb_bios$primary_position_type != 'Pitcher', 'Position', mlb_bios$primary_position_type)
 mlb_bios <- mlb_bios %>% select(full_name, primary_position_type, primary_position_abbreviation,  bat_side_code, pitch_hand_code, weight, height, current_team_name)
 names(mlb_bios) <- c('Name', 'Pos.Class', 'Pos', 'B', 'T', 'W', 'H', 'Team')
@@ -52,4 +55,4 @@ mlb_bios <- mlb_bios %>%
 
 mlb_bios <- mlb_bios %>% select('Name', 'Pos.Class', 'Pos.Group', 'Pos', 'B', 'T','H', 'W', 'Team')
 
-#write_csv(mlb_bios, 'app/mlb_bios_clean.csv')
+write_csv(mlb_bios, 'app/mlb_bios_clean.csv')
